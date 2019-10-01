@@ -5,7 +5,10 @@ h3{
     text-decoration: underline;
     margin: 1rem;
 }
-.wholeregister{
+.switchtologin{
+    color: black;
+}
+.wholelogin{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -22,7 +25,7 @@ font-size: 16px;
     cursor: pointer;
 }
 
-.registerform{
+.loginform{
     background: $lightBlack;
     color: $lightGreen;
     width: 25%;

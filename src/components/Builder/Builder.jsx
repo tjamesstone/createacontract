@@ -3,6 +3,7 @@ import {Switch, Route} from 'react-router-dom'
 import CompanyInfo from './CompanyInfo/CompanyInfo'
 import ContractTerms from './ContractTerms/ContractTerms'
 import Features from './Features/Features'
+import BuilderHeader from '../Header/BuilderHeader/BuilderHeader'
 
 
 class Builder extends Component{
@@ -16,6 +17,7 @@ class Builder extends Component{
     render(){
         return(
             <div className="builder">
+                <BuilderHeader />
                 Builder
                 <Switch>
                     <Route path ='/builder/companyinfo' component={CompanyInfo}/>

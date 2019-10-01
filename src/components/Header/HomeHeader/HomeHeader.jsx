@@ -39,7 +39,7 @@ class HomeHeader extends Component{
                     </Link>
                    
                     <div className="login">
-                        <Link to='/homeauth'>
+                        <Link to='/homeauth/login'>
                         <button className="loginbutton"
                         >login / register</button>
                         </Link>
