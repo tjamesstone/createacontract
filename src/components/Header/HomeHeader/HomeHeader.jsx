@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
-import './Header.scss'
+import './HomeHeader.scss'
 import contractLogo from '../../Assets/2.png'
 
-class Header extends Component{
+class HomeHeader extends Component{
     constructor(props){
         super(props)
         this.state = {
@@ -12,7 +12,7 @@ class Header extends Component{
 
     render(){
         return(
-            <div className="header">
+            <div className="homeheader">
                 
                 <div className="logoandtitle">
                     <img className="logo "src={contractLogo} alt="contract"/>
@@ -35,4 +35,4 @@ class Header extends Component{
     }
 }
 
-export default Header
+export default HomeHeader

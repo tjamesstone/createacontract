@@ -1,20 +1,18 @@
 import React, {Component} from 'react'
 
-class HomeAuth extends Component{
+class MyDocs extends Component{
     constructor(props){
-        super(props)
-        this.state={
+    super(props)
+    this.state = {
 
-        }
+    }
     }
 
     render(){
         return(
-            <div className="homeauth">
+            <div className="mydocs">
                 
             </div>
         )
     }
 }
-
-export default HomeAuth

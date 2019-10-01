@@ -1,20 +1,20 @@
 import React, {Component} from 'react'
 
-class HomeAuth extends Component{
+class CompanyInfo extends Component{
     constructor(props){
         super(props)
-        this.state={
+        this.state = {
 
         }
     }
 
     render(){
         return(
-            <div className="homeauth">
-                
+            <div className="companyinfo">
+
             </div>
         )
     }
 }
 
-export default HomeAuth
+export default CompanyInfo
