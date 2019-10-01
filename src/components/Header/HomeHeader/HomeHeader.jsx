@@ -14,23 +14,31 @@ class HomeHeader extends Component{
 
     render(){
         return(
-            <div className="homeheader">
+            <div className="header">
                 
                 <div className="logoandtitle">
-                    <img className="logo "src={greenScroll} alt="contract"/>
+                    <img className="logo"src={greenScroll} alt="contract"/>
+                    <p className='title'
+                    >createacontract.com</p>
                 </div>
                 <div className="headerbuttons">
                     <div className="new">
-                        <img src={greenPlus} alt="new"/>
+                        <img className="plusimg"src={greenPlus} alt="new"/>
                         <p>new</p>
                     </div>
                     <div className="mydocs">
                         <img className='filingcabinet'src={greenFiling} alt="mydocs"/>
                         <p>my docs</p>
                     </div>
-
-                    <button>register</button>
-                    <button>login</button>
+                    //NEED TO BUILD A TERNARY HERE THAT WILL DISPLAY .login OR .welcome DEPENDING ON IF THE USER IS LOGGED ON
+                    <div className="login">
+                        <button className="loginbutton"
+                        >login / register</button>
+                    </div>
+                    <div className="welcome">
+                    <p>logged in as: <br/>
+                        test</p>
+                    </div>
                 </div>
             </div>
         )

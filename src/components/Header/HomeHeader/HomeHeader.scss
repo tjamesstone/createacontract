@@ -1,23 +1,89 @@
 @import "/../../../App.scss";
 
-.homeheader{
+.header{
     background: $darkBlack;
     color: $lightGreen;
     position: relative;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    height: 80px;
+}
+.welcome{
+    font-size: 13px;
 }
 .logoandtitle{
-    color: $lightGreen;
-    
+    display: flex;
+    position: fixed;
+    left: 30px;
+    align-items: center;
 }
-
+.logoandtitle:hover{
+    cursor: pointer;
+}
+.title{
+    font-size: 30px;
+    font-weight: 700;
+}
+.title:hover{
+    text-decoration: underline;
+}
+.new{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 4rem;
+    margin: 1rem;
+}
+.new:hover{
+    cursor: pointer;
+}
+.plusimg{
+    width: 25px;
+}
+.filingcabinet{
+    width: 25px;
+}
+.mydocs{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 6rem;
+    margin: 1rem;
+}
+.mydocs:hover{
+    cursor: pointer;
+}
 .logo{
-    width: 40px;
+    width: 60px;
+    margin-right: 1rem;
+    height: 60px;
 }
 .headerbuttons{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    right: 30px;
+    
+    font-size: 18px;
 }
+.loginbutton{
+    color: $lightGreen;
+    border: none;
+    background: $lightBlack;
+    height: 2rem;
+    border-radius: 10px;
+    font-size: 18px;
+    margin: 1rem;
+}   
+.loginbutton:hover{
+    cursor: pointer;
+    background: $onHover;
+}
+.loginbutton:focus{
+    outline: 0;
+}
+
+
+
 
