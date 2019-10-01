@@ -13,6 +13,7 @@ export default class Home extends Component{
         return(
             <div className="home">
                 Home
+                
             </div>
         )
     }

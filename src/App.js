@@ -1,6 +1,7 @@
 import React from 'react';
+import Header from './components/Header/Header'
 import Home from './components/Home/Home'
-import './App.css';
+import './App.scss';
 
 class App extends React.Component {
   constructor(props){
@@ -13,6 +14,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <Header />
         <Home />
       </div>
     );
