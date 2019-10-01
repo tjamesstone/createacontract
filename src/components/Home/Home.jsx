@@ -1,6 +1,6 @@
 import './Home.scss'
 import React, {Component} from 'react'
-import AuthHeader from '../Header/AuthHeader/AuthHeader'
+import HomeHeader from '../Header/HomeHeader/HomeHeader'
 
 export default class Home extends Component{
     constructor(props){
@@ -13,7 +13,7 @@ export default class Home extends Component{
     render(){
         return(
             <div className="home">
-                <AuthHeader />
+                <HomeHeader />
                 Home
                 
             </div>

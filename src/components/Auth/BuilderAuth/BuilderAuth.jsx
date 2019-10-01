@@ -11,7 +11,7 @@ class BuilderAuth extends Component{
     render(){
         return(
             <div className="builderauth">
-                
+                Builder Auth
             </div>
         )
     }

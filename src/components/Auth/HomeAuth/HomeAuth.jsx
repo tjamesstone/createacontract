@@ -11,7 +11,7 @@ class HomeAuth extends Component{
     render(){
         return(
             <div className="homeauth">
-                
+                Home Auth
             </div>
         )
     }

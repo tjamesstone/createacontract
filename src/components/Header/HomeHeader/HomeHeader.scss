@@ -64,9 +64,14 @@
     align-items: center;
     position: fixed;
     right: 30px;
-    
     font-size: 18px;
+    color: $lightGreen;
 }
+a {
+    text-decoration: none;
+    color: $lightGreen;
+}
+
 .loginbutton{
     color: $lightGreen;
     border: none;

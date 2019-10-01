@@ -11,8 +11,9 @@ class MyDocs extends Component{
     render(){
         return(
             <div className="mydocs">
-                
+                My Docs
             </div>
         )
     }
 }
+export default MyDocs

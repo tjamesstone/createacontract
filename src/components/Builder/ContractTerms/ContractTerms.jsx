@@ -11,7 +11,7 @@ class ContractTerms extends Component{
     render(){
         return(
             <div className="contractterms">
-
+                Step Three: Contract Terms
             </div>
         )
     }

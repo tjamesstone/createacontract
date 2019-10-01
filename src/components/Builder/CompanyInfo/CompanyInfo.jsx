@@ -11,7 +11,7 @@ class CompanyInfo extends Component{
     render(){
         return(
             <div className="companyinfo">
-
+                Step One: Company Info
             </div>
         )
     }

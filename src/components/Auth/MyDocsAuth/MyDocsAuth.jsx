@@ -11,7 +11,7 @@ class MyDocsAuth extends Component{
     render(){
         return(
             <div className="mydocsauth">
-                
+                My Docs Auth
             </div>
         )
     }
