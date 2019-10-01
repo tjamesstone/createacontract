@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import './HomeHeader.scss'
-import contractLogo from '../../Assets/1.png'
+import greenScroll from '../../../Assets/greenscroll.png'
+import greenPlus from '../../../Assets/greenplus.png'
+import greenFiling from '../../../Assets/greenfiling.png'
 
 class HomeHeader extends Component{
     constructor(props){
@@ -15,15 +17,15 @@ class HomeHeader extends Component{
             <div className="homeheader">
                 
                 <div className="logoandtitle">
-                    <img className="logo "src={contractLogo} alt="contract"/>
+                    <img className="logo "src={greenScroll} alt="contract"/>
                 </div>
                 <div className="headerbuttons">
                     <div className="new">
-                        <img src="" alt="new"/>
+                        <img src={greenPlus} alt="new"/>
                         <p>new</p>
                     </div>
                     <div className="mydocs">
-                        <img src="" alt="mydocs"/>
+                        <img className='filingcabinet'src={greenFiling} alt="mydocs"/>
                         <p>my docs</p>
                     </div>
 

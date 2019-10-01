@@ -1,15 +1,20 @@
-@import "../../App.scss";
+@import "/../../../App.scss";
 
-.header{
+.homeheader{
     background: $darkBlack;
     color: $lightGreen;
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+.logoandtitle{
+    color: $lightGreen;
+    
+}
 
 .logo{
-    width: 400px;
+    width: 40px;
 }
 .headerbuttons{
     display: flex;
