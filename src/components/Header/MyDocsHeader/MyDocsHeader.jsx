@@ -1,6 +1,6 @@
 import React, {Componenet} from 'react'
 
-class BuilderHeader extends Componenet{
+class MyDocsHeader extends Componenet{
     constructor(props){
         super(props)
         this.state = {
@@ -10,11 +10,11 @@ class BuilderHeader extends Componenet{
 
     render(){
         return(
-            <div className="builderheader">
+            <div className="mydocsheader">
                 
             </div>
         )
     }
 }
 
-export default BuilderHeader 
+export default MyDocsHeader 

@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import './HomeHeader.scss'
-import contractLogo from '../../Assets/2.png'
+import contractLogo from '../../Assets/1.png'
 
 class HomeHeader extends Component{
     constructor(props){
