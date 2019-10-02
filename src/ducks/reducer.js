@@ -13,7 +13,7 @@ const CLEAR_STATE = "CLEAR_STATE"
 
 //ACTION FUNCTIONS
 
-export const handleUser = (first_name, last_name, email) => {
+export const handleUser = (email, first_name, last_name) => {
     let user = {first_name, last_name, email}
     return {
         type: HANDLE_USER,

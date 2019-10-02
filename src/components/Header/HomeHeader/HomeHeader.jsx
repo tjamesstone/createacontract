@@ -51,21 +51,24 @@ class HomeHeader extends Component{
     //NEED TO BUILD A TERNARY BETWEEN .login OR .welcome DEPENDING ON IF THE USER IS LOGGED ON WILL DISPLAY ONE OR THE OTHER
         if(this.props.email){
             return(
-                <div className="header">
                 
-                <div className="logoandtitle">
-                    <img className="logo"src={greenScroll} alt="contract"/>
-                    <p className='title'
-                    >createacontract.com</p>
-                </div>
+                <div className="header">
+                <Link to ='/'>
+                    <div className="logoandtitle">
+                        <img className="logo"src={greenScroll} alt="contract"/>
+                        <p className='title'
+                        >createacontract.com</p>
+                    </div>
+                </Link>
                 <div className="headerbuttons">
-                    <Link to='/builderauth'>
+                    <Link to='/builder/companyinfo'>
                     <div className="new">
                         <img className="plusimg"src={greenPlus} alt="new"/>
                         <p>new</p>
                     </div>
+                    
                     </Link>
-                    <Link to ='/mydocsauth'>
+                    <Link to ='/mydocs'>
                     <div className="mydocs">
                         <img className='filingcabinet'src={greenFiling} alt="mydocs"/>
                         <p>my docs</p>
@@ -91,14 +94,15 @@ class HomeHeader extends Component{
         } else {
             return(
                 <div className="header">
-                    
-                    <div className="logoandtitle">
-                        <img className="logo"src={greenScroll} alt="contract"/>
-                        <p className='title'
-                        >createacontract.com</p>
-                    </div>
+                    <Link to ='/'>
+                        <div className="logoandtitle">
+                            <img className="logo"src={greenScroll} alt="contract"/>
+                            <p className='title'
+                            >createacontract.com</p>
+                        </div>
+                    </Link>
                     <div className="headerbuttons">
-                        <Link to='/builderauth'>
+                        {/* <Link to='/builderauth'>
                         <div className="new">
                             <img className="plusimg"src={greenPlus} alt="new"/>
                             <p>new</p>
@@ -109,7 +113,7 @@ class HomeHeader extends Component{
                             <img className='filingcabinet'src={greenFiling} alt="mydocs"/>
                             <p>my docs</p>
                         </div>
-                        </Link>
+                        </Link> */}
                        
                         <div className="login">
                             <Link to='/homeauth/login'>

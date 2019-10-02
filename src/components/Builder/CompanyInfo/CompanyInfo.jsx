@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
+import './CompanyInfo.scss'
 
 class CompanyInfo extends Component{
     constructor(props){
@@ -12,9 +13,9 @@ class CompanyInfo extends Component{
     render(){
         return(
             <div className="companyinfo">
-                Step One: Company Info
-                <div className="form">
-                    <h2>Who Are You?</h2>
+                <div className="whoareyouform">
+                    <h2 className='whotitle'
+                    >Who Are You?</h2>
                     <div className="legalname">
                         <p>Legal Name of Company:</p>
                         <input type="text"/>
@@ -45,9 +46,14 @@ class CompanyInfo extends Component{
                     </div>
                     
                 </div>
+                <div className="nothing">
+                    <p></p>
+                
                 <Link to='/builder/features'>
-                <button>Next to Features</button>
+                <button className='nextbutton'
+                >Next to Features</button>
                 </Link>
+                </div>
             </div>
         )
     }

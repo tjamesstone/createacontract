@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import MyDocsHeader from '../Header/MyDocsHeader/MyDocsHeader'
+import HomeHeader from '../Header/HomeHeader/HomeHeader'
 import './MyDocs.scss'
 
 class MyDocs extends Component{
@@ -13,7 +13,7 @@ class MyDocs extends Component{
     render(){
         return(
             <div className="mydocscomponent">
-                <MyDocsHeader/>
+                <HomeHeader/>
                 <div className="mydocsactual">
                     <div className="therealdocs">
                     My docs

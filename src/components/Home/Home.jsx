@@ -19,7 +19,7 @@ export default class Home extends Component{
                     <div className="welcome">
                         <h2>Welcome</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio tempore esse consequatur hic dicta laboriosam voluptate autem optio iusto repudiandae quae ipsam a officia, aliquid dolores cumque quos explicabo illo?</p>
-                        <Link to ='/builderauth'><button>Get Started</button></Link>
+                        <Link to ='/homeauth/login'><button>Get Started</button></Link>
                     </div>
                     <div className="howitworks">
                         <h2>How it Works</h2>
