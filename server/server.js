@@ -22,6 +22,7 @@ app.use(session({
 //ENDPOINTS
 
 //AUTH ENDPOINTS
+app.post('/auth/register', authCtrl.register)
 
 //CONTRACT ENDPOINTS
 
