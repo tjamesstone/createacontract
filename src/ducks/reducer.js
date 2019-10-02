@@ -1,4 +1,3 @@
-import { access } from "fs"
 
 //INITIAL STATE
 const initialState = {

@@ -4,6 +4,9 @@ import './HomeAuth.scss'
 import Register from '../Register/Register'
 import Login from '../Login/Login'
 import {Switch, Route} from 'react-router-dom'
+// import {connect} from 'react-redux'
+// import {handleUser, clearState} from '../../../ducks/reducer'
+// import axios from 'axios'
 
 
 class HomeAuth extends Component{
@@ -16,6 +19,10 @@ class HomeAuth extends Component{
             last_name: ''
         }
     }
+
+    // getUserByEmail = async () => {
+    //     let
+    // }
 
 
 

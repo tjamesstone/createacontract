@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import './Login.scss'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
+import {connect} from 'react-redux'
+import {handleUser} from '../../../ducks/reducer'
 
 
 class Login extends Component{
@@ -23,7 +25,7 @@ class Login extends Component{
         const {email, password} = this.state
         const res = await axios.post('/auth/login', {email, password})
         if (res.data.email){
-            this.props.handleUser(res.data.email, res.data.first_name, res.data.last_name)
+            this.props.handleUser(res.data.email)
             this.props.history.push('/')
         } else {
             alert(`${res.data.message}`)
@@ -39,15 +41,15 @@ class Login extends Component{
                 
                 <div className="email">
                     <p>email:</p>
-                    <input type="text"/>
+                    <input name='email' placeholder='Email' onChange={e => this.handleChange(e, 'email')} value={this.state.email} type="text"/>
                 </div>
                 <div className="password">
                     <p>password:</p>
-                    <input type="password"/>
+                    <input name='password' placeholder='Password' onChange={e => this.handleChange(e, 'password')} value={this.state.password} type="text"/>
                 </div>
                 
                 <div className="registerbutton">
-                    <button>Login</button>
+                    <button onClick={() => this.login()} >Login</button>
                 </div>
             </div>
             <p className="firstline"
@@ -61,4 +63,4 @@ class Login extends Component{
     }
 }
 
-export default Login
+export default connect(null, {handleUser})(Login)

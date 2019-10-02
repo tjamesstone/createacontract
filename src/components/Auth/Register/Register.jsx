@@ -64,7 +64,7 @@ class Register extends Component{
                             <input type="password"/>
                         </div>
                         <div className="registerbutton">
-                            <button>Register</button>
+                            <button onClick={() => this.register()} >Register</button>
                         </div>
                     </div>
                     <p className="firstline"
