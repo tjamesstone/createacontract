@@ -1,0 +1,16 @@
+@import '../../App.scss';
+
+
+
+
+.mydocsactual{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.therealdocs{
+    background: pink;
+    width: 70%;
+    display: flex;
+    justify-content: flex-start;
+}

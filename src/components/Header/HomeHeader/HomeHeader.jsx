@@ -48,6 +48,9 @@ class HomeHeader extends Component{
                     <p>logged in as: <br/>
                         test</p>
                     </div>
+                    <div className="login">
+                        <button className='loginbutton'>Log out</button>
+                    </div>
                 </div>
             </div>
         )

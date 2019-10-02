@@ -11,6 +11,10 @@
 .welcome{
     font-size: 13px;
 }
+.mydocstitle{
+    display: flex;
+    align-items: center;
+}
 .logoandtitle{
     display: flex;
     
@@ -23,6 +27,7 @@
 .title{
     font-size: 30px;
     font-weight: 700;
+    
 }
 .title:hover{
     text-decoration: underline;
@@ -47,8 +52,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 6rem;
     margin: 1rem;
+  
 }
 .mydocs:hover{
     cursor: pointer;
@@ -71,6 +76,7 @@ a {
     color: $lightGreen;
 }
 
+
 .loginbutton{
     color: $lightGreen;
     border: none;
@@ -79,7 +85,7 @@ a {
     border-radius: 10px;
     font-size: 18px;
     margin: 1rem;
-    width: 9rem;
+    width: 3rem;
 }   
 .loginbutton:hover{
     cursor: pointer;
