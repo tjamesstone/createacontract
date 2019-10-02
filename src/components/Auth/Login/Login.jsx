@@ -1,12 +1,32 @@
 import React, {Component} from 'react'
 import './Login.scss'
 import {Link} from 'react-router-dom'
+import axios from 'axios'
+
 
 class Login extends Component{
     constructor(props){
         super(props)
         this.state={
             
+        }
+    }
+    handleChange = (e, key) => {
+        this.setState({
+            [key] : e.target.value
+        })
+    }
+
+    
+
+    login = async () => {
+        const {email, password} = this.state
+        const res = await axios.post('/auth/login', {email, password})
+        if (res.data.email){
+            this.props.handleUser(res.data.email, res.data.first_name, res.data.last_name)
+            this.props.history.push('/')
+        } else {
+            alert(`${res.data.message}`)
         }
     }
 

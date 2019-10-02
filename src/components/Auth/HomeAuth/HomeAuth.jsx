@@ -10,9 +10,14 @@ class HomeAuth extends Component{
     constructor(props){
         super(props)
         this.state={
-            
+            email: '',
+            password: '',
+            first_name: '',
+            last_name: ''
         }
     }
+
+
 
     render(){
         return(
