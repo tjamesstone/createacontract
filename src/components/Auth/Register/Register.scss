@@ -8,6 +8,20 @@ h3{
 .switchtologin{
     color: black;
 }
+.theotherbutton{
+    color: $lightGreen;
+    border: none;
+    background: $darkBlack;
+    height: 2rem;
+    border-radius: 10px;
+    font-size: 18px;
+    width: 100%;
+    
+}   
+.theotherbutton:hover{
+    cursor: pointer;
+    background: $onHover;
+}
 .wholeregister{
     display: flex;
     flex-direction: column;
@@ -21,7 +35,7 @@ font-size: 13px;
 font-size: 16px;
 }
 .switchtologin:hover{
-    text-decoration: underline;
+    // text-decoration: underline;
     cursor: pointer;
 }
 

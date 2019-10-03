@@ -4,7 +4,7 @@ const express = require('express')
 const {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env
 const massive = require('massive')
 const session = require('express-session')
-const contractCtrl = './controllers/contractCtrl.js'
+const contractCtrl = require('./controllers/contractCtrl.js')
 const authCtrl = require('./controllers/authCtrl')
 
 const app = express()
@@ -30,6 +30,7 @@ app.get('/api/auth/me', authCtrl.findUser)
 
 
 //CONTRACT ENDPOINTS
+app.post('/api/company/new/', contractCtrl.addCompany)
 
 //MASSIVE AND APP LISTENING
 

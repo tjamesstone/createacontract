@@ -49,7 +49,7 @@ class Login extends Component{
                 </div>
                 
                 <div className="registerbutton">
-                    <button onClick={() => this.login()} >Login</button>
+                    <button  className='theotherbutton' onClick={() => this.login()} >Login</button>
                 </div>
             </div>
             <p className="firstline"
