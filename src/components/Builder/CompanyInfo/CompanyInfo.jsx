@@ -9,8 +9,8 @@ class CompanyInfo extends Component{
     constructor(props){
         super(props)
         this.state = {
-            legalName: '',
-            termsOfService: '',
+            legal_name: '',
+            terms_of_service: '',
             logo: '',
             address: '',
             city: '',
@@ -24,15 +24,20 @@ class CompanyInfo extends Component{
         this.setState({
             [key] : e.target.value
         })
-        console.log(this.state)
+        // console.log(this.state)
     }
 
     addCompanyInfo = async () => {
-        const {legalName, termsOfService, logo, address, city, state, zipcode} = this.state
-        const res = await axios.post('/api/company/new', {legalName, termsOfService, logo, address, city, state, zipcode})
+        const {legal_name, terms_of_service, logo, address, city, state, zipcode} = this.state
+        await axios.post('/api/company/new', {legal_name, terms_of_service, logo, address, city, state, zipcode}).then( res => {
+            console.log(res.data.legal_name)
+            this.props.handleCompanyInfo(res.data.legal_name, res.data.terms_of_service, res.data.logo, res.data.address, res.data.city, res.data.state, res.data.zipcode)
+            this.props.history.push('/builder/features')
 
-        this.props.handleCompanyInfo(res.data.id, res.data.legalName, res.data.termsOfService, res.data.logo, res.data.address, res.data.city, res.data.state, res.data.zipcode)
-        this.props.history.push('/builder/features')
+        }
+
+        )
+
     }
 
     render(){
@@ -43,11 +48,11 @@ class CompanyInfo extends Component{
                     >Who Are You?</h2>
                     <div className="legalname">
                         <p>Legal Name of Company:</p>
-                        <input name='legalName' placeholder='Legal Name' onChange={e => this.handleChange(e, 'legalName')} value={this.state.legalName} type="text"/>
+                        <input name='legal_name' placeholder='Legal Name' onChange={e => this.handleChange(e, 'legal_name')} value={this.state.legal_name} type="text"/>
                     </div>
                     <div className="termsofservice">
                         <p>Link to Terms of Service:</p>
-                        <input name='termsOfService' placeholder='Terms of Service' onChange={e => this.handleChange(e, 'termsOfService')} value={this.state.termsOfService} type="text"/>
+                        <input name='terms_of_service' placeholder='Terms of Service' onChange={e => this.handleChange(e, 'terms_of_service')} value={this.state.terms_of_service} type="text"/>
                     </div>
                     <div className="companylogo">
                         <p>Company Logo:</p>

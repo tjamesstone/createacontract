@@ -4,6 +4,7 @@ import CompanyInfo from './CompanyInfo/CompanyInfo'
 import ContractTerms from './ContractTerms/ContractTerms'
 import Features from './Features/Features'
 import HomeHeader from '../Header/HomeHeader/HomeHeader'
+import ContractPreview from './ContractPreview/ContractPreview'
 
 
 class Builder extends Component{
@@ -23,6 +24,7 @@ class Builder extends Component{
                     <Route path ='/builder/companyinfo' component={CompanyInfo}/>
                     <Route path ='/builder/features' component={Features}/>
                     <Route path ='/builder/contractterms' component={ContractTerms}/>
+                    <Route path ='/builder/contractpreview' component={ContractPreview}/>
                 </Switch>
             </div>
         )

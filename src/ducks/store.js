@@ -9,5 +9,5 @@ const rootReducer = combineReducers({
     company: companyReducer
 })
 
-
+// console.log(companyReducer)
 export default createStore(rootReducer, composeWithDevTools(applyMiddleware(promiseMiddleware)) )
