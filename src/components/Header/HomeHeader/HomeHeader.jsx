@@ -49,7 +49,7 @@ class HomeHeader extends Component{
 
     render(){
     //NEED TO BUILD A TERNARY BETWEEN .login OR .welcome DEPENDING ON IF THE USER IS LOGGED ON WILL DISPLAY ONE OR THE OTHER
-        if(this.props.email){
+        if(this.props.user.email){
             return(
                 
                 <div className="header">
@@ -91,7 +91,7 @@ class HomeHeader extends Component{
                     </div> */}
                     <div className="welcomeheader">
                     <p>logged in as: <br/>
-                        {this.props.first_name} {this.props.last_name}</p>
+                        {this.props.user.first_name} {this.props.user.last_name}</p>
                     </div>
                     <div className="login">
                         <button onClick={() => this.userLogout()} className='loginbutton'>Log out</button>
@@ -155,8 +155,8 @@ class HomeHeader extends Component{
 const mapDispatchToProps = {handleUser, clearState}
 
 const mapStateToProps = reduxState => {
-    const {email, first_name, last_name} = reduxState
-    return {email, first_name, last_name}
+  
+    return reduxState
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeHeader)

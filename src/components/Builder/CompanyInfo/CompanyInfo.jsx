@@ -1,6 +1,9 @@
 import React, {Component} from 'react'
-import {Link} from 'react-router-dom'
+// import {Link} from 'react-router-dom'
 import './CompanyInfo.scss'
+import {connect} from 'react-redux'
+import {handleCompanyInfo} from '../../../ducks/companyReducer'
+import axios from 'axios'
 
 class CompanyInfo extends Component{
     constructor(props){
@@ -15,6 +18,22 @@ class CompanyInfo extends Component{
             zipcode: 0
         }
     }
+    
+
+    handleChange = (e, key) => {
+        this.setState({
+            [key] : e.target.value
+        })
+        console.log(this.state)
+    }
+
+    addCompanyInfo = async () => {
+        const {legalName, termsOfService, logo, address, city, state, zipcode} = this.state
+        const res = await axios.post('/api/company/new', {legalName, termsOfService, logo, address, city, state, zipcode})
+
+        this.props.handleCompanyInfo(res.data.id, res.data.legalName, res.data.termsOfService, res.data.logo, res.data.address, res.data.city, res.data.state, res.data.zipcode)
+        this.props.history.push('/builder/features')
+    }
 
     render(){
         return(
@@ -24,45 +43,45 @@ class CompanyInfo extends Component{
                     >Who Are You?</h2>
                     <div className="legalname">
                         <p>Legal Name of Company:</p>
-                        <input type="text"/>
+                        <input name='legalName' placeholder='Legal Name' onChange={e => this.handleChange(e, 'legalName')} value={this.state.legalName} type="text"/>
                     </div>
                     <div className="termsofservice">
                         <p>Link to Terms of Service:</p>
-                        <input type="text"/>
+                        <input name='termsOfService' placeholder='Terms of Service' onChange={e => this.handleChange(e, 'termsOfService')} value={this.state.termsOfService} type="text"/>
                     </div>
                     <div className="companylogo">
                         <p>Company Logo:</p>
-                        <input type="text"/>
+                        <input name='logo' placeholder='Logo' onChange={e => this.handleChange(e, 'logo')} value={this.state.logo} type="text"/>
                     </div>
                     <div className="address">
                         <p>Address:</p>
-                        <input type="text"/>
+                        <input name='address' placeholder='Address' onChange={e => this.handleChange(e, 'address')} value={this.state.address} type="text"/>
                     </div>
                     <div className="city">
                         <p>City:</p>
-                        <input type="text"/>
+                        <input name='city' placeholder='City' onChange={e => this.handleChange(e, 'city')} value={this.state.city} type="text"/>
                     </div>
                     <div className="state">
                         <p>State:</p>
-                        <input type="text"/>
+                        <input name='state' placeholder='State' onChange={e => this.handleChange(e, 'state')} value={this.state.state} type="text"/>
                     </div>
                     <div className="zip">
                         <p>Zip Code:</p>
-                        <input type="text"/>
+                        <input name='zipcode' placeholder='Zip Code' onChange={e => this.handleChange(e, 'zipcode')} value={this.state.zipcode} type="text"/>
                     </div>
                     
                 </div>
                 <div className="nothing">
                     <p></p>
                 
-                <Link to='/builder/features'>
-                <button className='nextbutton'
+                {/* <Link to='/builder/features'> */}
+                <button className='nextbutton' onClick={() => this.addCompanyInfo()}
                 >Next to Features</button>
-                </Link>
+                {/* </Link> */}
                 </div>
             </div>
         )
     }
 }
 
-export default CompanyInfo
+export default connect(null, {handleCompanyInfo}) (CompanyInfo)
