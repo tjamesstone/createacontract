@@ -27,7 +27,7 @@ class Features extends Component {
                     
                 </div>
                 <div className="thebuttons">
-                        <Link to='/builder/companyinfo'><button className='nextbutton' >Back to Company Info</button></Link>
+                        <Link to='/builder/clientinfo'><button className='nextbutton' >Back to Client Info</button></Link>
                         <Link to='/builder/contractterms'><button className='nextbutton'>Next to Contract Terms</button></Link>
                     </div>
             </div>

@@ -30,9 +30,10 @@ class CompanyInfo extends Component{
     addCompanyInfo = async () => {
         const {legal_name, terms_of_service, logo, address, city, state, zipcode} = this.state
         await axios.post('/api/company/new', {legal_name, terms_of_service, logo, address, city, state, zipcode}).then( res => {
-            console.log(res.data.legal_name)
+            // console.log(res.data)
+            // const {legal_name: legalName} = res.data
             this.props.handleCompanyInfo(res.data.legal_name, res.data.terms_of_service, res.data.logo, res.data.address, res.data.city, res.data.state, res.data.zipcode)
-            this.props.history.push('/builder/features')
+            this.props.history.push('/builder/clientinfo')
 
         }
 

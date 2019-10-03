@@ -17,6 +17,7 @@ const CLEAR_COMPANY_STATE = 'CLEAR_COMPANY_STATE'
 //ACTION FUNCTIONS
 export const handleCompanyInfo = (legal_name, terms_of_service, logo, address, city, state, zipcode) =>{
     let companyInfo = {legal_name, terms_of_service, logo, address, city, state, zipcode}
+    // console.log(companyInfo)
     return {
         type: HANDLE_COMPANY_INFO,
         payload: companyInfo
@@ -34,7 +35,8 @@ const companyReducer = (state = initialState, action) => {
         case CLEAR_COMPANY_STATE:
             return {...state, legal_name: '', terms_of_service: '', logo: '', address: '', city: '', state: '', zipcode: ''}
         case HANDLE_COMPANY_INFO:
-            return {...state, legal_name: action.payload.legalName, terms_of_service: action.payload.termsOfService, logo: action.payload.logo, address: action.payload.address, city: action.payload.city, state: action.payload.state, zipcode: action.payload.zipcode}
+            console.log(action.payload)
+            return {...state, legal_name: action.payload.legal_name, terms_of_service: action.payload.terms_of_service, logo: action.payload.logo, address: action.payload.address, city: action.payload.city, state: action.payload.state, zipcode: action.payload.zipcode}
             default:
                 return state
     }

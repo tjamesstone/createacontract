@@ -31,6 +31,8 @@ app.get('/api/auth/me', authCtrl.findUser)
 
 //CONTRACT ENDPOINTS
 app.post('/api/company/new/', contractCtrl.addCompany)
+app.post('/api/client/new/', contractCtrl.addClient)
+
 
 //MASSIVE AND APP LISTENING
 
