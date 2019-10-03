@@ -4,19 +4,92 @@
 .home{
     background: $darkGreen;
 }
+.welcomeicon{
+    width: 30px;
+}
+i{
+    font-size: 100px;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    background: white;
+}
+.welcome{
+    background: $darkBlack;
+    margin-bottom: 1rem;
+    color: $lightGreen;
+    padding-left: 20%;
+    padding-right: 20%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h2{
+        font-size: 100px;
+        margin: 0 auto;
+    }
+    button{
+        border: none;
+        color: #66BBFF;
+        background: none;
+        font-size: 23px;
+    }
+    
+}
+.howitworks{
+    background: $lightWhite;
+    margin-bottom: 1rem;
+    padding-left: 20%;
+    padding-right: 20%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h2{
+        font-size: 100px;
+        margin: 0 auto;
+    }
+    button{
+        border: none;
+        color: #66BBFF;
+        background: none;
+        font-size: 23px;
+    }
+}
+.learnmore{
+    background: $darkBlack;
+    margin-bottom: 1rem;
+    color: $lightGreen;
+    padding-left: 20%;
+    padding-right: 20%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h2{
+        font-size: 100px;
+        margin: 0 auto;
+    }
+    button{
+        border: none;
+        color: #66BBFF;
+        background: none;
+        font-size: 23px;
+    }
+    
+
+}
 
 .content{
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
-}
-.welcome{
-    width: 60%;
-}
-.howitworks{
-    width: 60%;
-}
-.learnmore{
-    width: 60%;
+    
+   
 }

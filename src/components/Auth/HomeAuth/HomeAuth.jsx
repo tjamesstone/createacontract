@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import AuthHeader from '../../Header/AuthHeader/AuthHeader'
+import HomeHeader from '../../Header/HomeHeader/HomeHeader'
 import './HomeAuth.scss'
 import Register from '../Register/Register'
 import Login from '../Login/Login'
@@ -29,7 +29,7 @@ class HomeAuth extends Component{
     render(){
         return(
             <div className="homeauth">
-                <AuthHeader />
+                <HomeHeader />
                 <div className="logincontent">
                     
                    <Switch>

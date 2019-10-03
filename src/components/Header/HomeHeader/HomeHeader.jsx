@@ -56,8 +56,16 @@ class HomeHeader extends Component{
                 <Link to ='/'>
                     <div className="logoandtitle">
                         <img className="logo"src={greenScroll} alt="contract"/>
-                        <p className='title'
-                        >createacontract.com</p>
+                        <div className="title">
+                            <p className='fonttitle'
+                            >Create A Contract</p>
+                            <div className="commie">
+                            <p className='com'
+                            >.com</p>
+                            </div>
+                            
+                        </div>
+                        
                     </div>
                 </Link>
                 <div className="headerbuttons">
@@ -81,7 +89,7 @@ class HomeHeader extends Component{
                         >login / register</button>
                         </Link>
                     </div> */}
-                    <div className="welcome">
+                    <div className="welcomeheader">
                     <p>logged in as: <br/>
                         {this.props.first_name} {this.props.last_name}</p>
                     </div>
@@ -95,11 +103,19 @@ class HomeHeader extends Component{
             return(
                 <div className="header">
                     <Link to ='/'>
-                        <div className="logoandtitle">
-                            <img className="logo"src={greenScroll} alt="contract"/>
-                            <p className='title'
-                            >createacontract.com</p>
+                    <div className="logoandtitle">
+                        <img className="logo"src={greenScroll} alt="contract"/>
+                        <div className="title">
+                            <p className='fonttitle'
+                            >Create A Contract</p>
+                            <div className="commie">
+                            <p className='com'
+                            >.com</p>
+                            </div>
+                            
                         </div>
+                        
+                    </div>
                     </Link>
                     <div className="headerbuttons">
                         {/* <Link to='/builderauth'>
