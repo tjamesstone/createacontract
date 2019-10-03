@@ -6,7 +6,13 @@ class CompanyInfo extends Component{
     constructor(props){
         super(props)
         this.state = {
-
+            legalName: '',
+            termsOfService: '',
+            logo: '',
+            address: '',
+            city: '',
+            state: '',
+            zipcode: 0
         }
     }
 
