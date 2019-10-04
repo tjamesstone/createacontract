@@ -19,27 +19,27 @@ export const handleTermsInfo = (effective_date, contract_length, autorenew, paym
     let termsInfo = { effective_date, contract_length, autorenew, payment_frequency, collections_protection, chargeback_protection}
     // console.log(companyInfo)
     return {
-        type: HANDLE_FEATURES_INFO,
-        payload: featuresInfo
+        type: HANDLE_TERMS_INFO,
+        payload: termsInfo
     }
 }
-export const clearFeaturesState = () => {
+export const clearTermsState = () => {
     return {
-        type: CLEAR_FEATURES_STATE
+        type: CLEAR_TERMS_STATE
     }
 }
 
 //REDUCER
-const featuresReducer = (state = initialState, action) => {
+const termsReducer = (state = initialState, action) => {
     switch (action.type) {
-        case CLEAR_FEATURES_STATE:
-            return { ...state, title: '', description: '', price: '' }
-        case HANDLE_FEATURES_INFO:
-            console.log(action.payload)
-            return { ...state, title: action.payload.title, description: action.payload.description, price: action.payload.price }
+        case CLEAR_TERMS_STATE:
+            return { ...state, effective_date: '', contract_length: '', autorenew: '', payment_frequency: '', collections_protection: '', chargeback_protection: '' }
+        case HANDLE_TERMS_INFO:
+            // console.log(action.payload)
+            return { ...state, effective_date: action.payload.effective_date, contract_length: action.payload.contract_length, autorenew: action.payload.autorenew, payment_frequency: action.payload.payment_frequency, collections_protection: action.payload.collections_protection, chargeback_protection: action.payload.chargeback_protection}
         default:
             return state
     }
 }
 
-export default featuresReducer
+export default termsReducer
