@@ -6,8 +6,19 @@ class ContractTerms extends Component{
     constructor(props){
         super(props)
         this.state = {
-
+            effective_date: '',
+            contract_length: '',
+            autorenew: 'yes',
+            payment_frequency: 'monthly',
+            collections_protection: 'basic',
+            chargeback_protection: 'yes'
         }
+    }
+    handleChange = (e, key) => {
+        this.setState({
+            [key] : e.target.value
+        })
+        console.log(this.state)
     }
 
     render(){
@@ -17,23 +28,23 @@ class ContractTerms extends Component{
                 <div className="whoareyouform">
                     <div className="effectivedate">
                         <p>Effective Date:</p>
-                        <input type="date"/>
+                        <input name='effective_date' placeholder='Effective Date' onChange={e => this.handleChange(e, 'effective_date')} value={this.state.effective_date} type="text"/>
                     </div>
                     <div className="contractlength">
                         <p>Contract Length:</p>
-                        <input type="number"/>
+                        <input name='contract_length' placeholder='Contract Length' onChange={e => this.handleChange(e, 'contract_length')} value={this.state.contract_length} type="number"/>
                         <p>months</p>
                     </div>
                     <div className="autorenew">
                         <p>Auto Renew?</p>
-                        <select name="autorenew" id="">
+                        <select name="autorenew" id="" onChange={e => this.handleChange(e, 'autorenew')} value={this.state.autorenew}>
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
                         </select>
                     </div>
                     <div className="paymentfrequency">
                         <p>Payment Frequency:</p>
-                        <select name="payment" id="">
+                        <select name="payment_frequency" id="" onChange={e => this.handleChange(e, 'payment_frequency')} value={this.state.payment_frequency} >
                             <option value="monthly">Monthly</option>
                             <option value="quarterly">Quarterly</option>
                             <option value="semiannually">Semi-Annually</option>
@@ -42,15 +53,15 @@ class ContractTerms extends Component{
                     </div>
                     <div className="collectionsprotection">
                         <p>Collections Protection:</p>
-                        <select name="collections" id="">
-                            <option value="none">None</option>
-                            <option value="standard">Standard</option>
+                        <select name="collections_protection" id="" onChange={e => this.handleChange(e, 'collections_protection')} value={this.state.collections_protection} >
+                            <option value="basic">Basic</option>
                             <option value="full">Full</option>
+                            <option value="none">None</option>
                         </select>
                     </div>
                     <div className="chargeback">
                         <p>Chargeback Protection</p>
-                        <select name="chargebackprotection" id="">
+                        <select name="chargeback_protection" id="" onChange={e => this.handleChange(e, 'chargeback_protection')} value={this.state.chargeback_protection}>
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
                         </select> 
