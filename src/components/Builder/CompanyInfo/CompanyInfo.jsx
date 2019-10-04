@@ -3,7 +3,7 @@ import React, {Component} from 'react'
 import './CompanyInfo.scss'
 import {connect} from 'react-redux'
 import {handleCompanyInfo} from '../../../ducks/companyReducer'
-import axios from 'axios'
+// import axios from 'axios'
 
 class CompanyInfo extends Component{
     constructor(props){
@@ -29,15 +29,17 @@ class CompanyInfo extends Component{
 
     addCompanyInfo = async () => {
         const {legal_name, terms_of_service, logo, address, city, state, zipcode} = this.state
-        await axios.post('/api/company/new', {legal_name, terms_of_service, logo, address, city, state, zipcode}).then( res => {
+        // await axios.post('/api/company/new', {legal_name, terms_of_service, logo, address, city, state, zipcode}).then( res => {
             // console.log(res.data)
             // const {legal_name: legalName} = res.data
-            this.props.handleCompanyInfo(res.data.legal_name, res.data.terms_of_service, res.data.logo, res.data.address, res.data.city, res.data.state, res.data.zipcode)
+            // this.props.handleCompanyInfo(res.data.legal_name, res.data.terms_of_service, res.data.logo, res.data.address, res.data.city, res.data.state, res.data.zipcode)
+            this.props.handleCompanyInfo(legal_name, terms_of_service, logo, address, city, state, zipcode)
+
             this.props.history.push('/builder/clientinfo')
 
-        }
+        // }
 
-        )
+        // )
 
     }
 

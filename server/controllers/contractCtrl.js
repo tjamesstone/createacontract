@@ -26,5 +26,12 @@ module.exports = {
         const {effective_date, contract_length, autorenew, payment_frequency, collections_protection, chargeback_protection} = req.body
         const termsInfo = await db.add_terms([effective_date, contract_length, autorenew, payment_frequency, collections_protection, chargeback_protection, userid])
         res.status(200).send(termsInfo[0])
+    },
+    addContract: async (req, res) => {
+        const db = req.app.get('db')
+        const {userid} = req.session
+        const {contract_name, company_id, client_id, features_id, terms_id} = req.body
+        const contractInfo = await db.add_contract([contract_name, company_id, client_id, features_id, terms_id, userid])
+        res.status(200).send(contractInfo[0])
     }
 }

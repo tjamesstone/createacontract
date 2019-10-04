@@ -3,7 +3,7 @@ import './ClientInfo.scss'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { handleClientInfo } from '../../../ducks/clientReducer'
-import axios from 'axios'
+// import axios from 'axios'
 
 class ClientInfo extends Component {
     constructor(props) {
@@ -21,13 +21,13 @@ class ClientInfo extends Component {
     }
     addClientInfo = async () => {
         const { client_name, signatory } = this.state
-        await axios.post('/api/client/new', { client_name, signatory }).then(res => {
+        // await axios.post('/api/client/new', { client_name, signatory }).then(res => {
             // console.log(res.data)
             // const {legal_name: legalName} = res.data
-            this.props.handleClientInfo(res.data.client_name, res.data.signatory)
+            this.props.handleClientInfo(client_name, signatory)
             this.props.history.push('/builder/features')
-        }
-        )
+        // }
+        
     }
 
     render() {

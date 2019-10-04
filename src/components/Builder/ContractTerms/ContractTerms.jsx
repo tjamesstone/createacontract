@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import './ContractTerms.scss'
-import axios from 'axios'
+// import axios from 'axios'
 import {handleTermsInfo} from '../../../ducks/termsReducer'
 import {connect} from 'react-redux'
 
@@ -25,13 +25,13 @@ class ContractTerms extends Component{
     }
     addTermsInfo = async () => {
         const { effective_date, contract_length, autorenew, payment_frequency, collections_protection, chargeback_protection} = this.state
-        await axios.post('/api/terms/new', {effective_date, contract_length, autorenew, payment_frequency, collections_protection, chargeback_protection }).then(res => {
+        // await axios.post('/api/terms/new', {effective_date, contract_length, autorenew, payment_frequency, collections_protection, chargeback_protection }).then(res => {
             // console.log(res.data)
             
-            this.props.handleTermsInfo(res.data.effective_date, res.data.contract_length, res.data.autorenew, res.data.payment_frequency, res.data.collections_protection, res.data.chargeback_protection)
+            this.props.handleTermsInfo(effective_date, contract_length, autorenew, payment_frequency, collections_protection,chargeback_protection)
             this.props.history.push('/builder/contractpreview')
-        }
-        )
+        // }
+        // )
     }
 
     render(){

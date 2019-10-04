@@ -2,13 +2,35 @@ import React, { Component } from 'react'
 import './ContractPreview.scss'
 // import {Document, Page} from 'react-pdf'
 import {connect} from 'react-redux'
+import axios from 'axios'
 
 class ContractPreview extends Component {
     constructor(props) {
         super(props)
         this.state = {
-
+            contract_name: ''
         }
+    }
+
+    saveCompanyInfo = async () => {
+        // console.log(this.props)
+        const {contract_name} = this.state
+        const {legal_name, terms_of_service, logo, address, city, state, zipcode} = this.props.company
+        const {client_name, signatory} = this.props.client
+        const {title, description, price} = this.props.features
+        const {effective_date, contract_length, autorenew, payment_frequency, collections_protection, chargeback_protection} = this.props.terms
+        // console.log(legal_name)
+        const companyRes = await axios.post('/api/company/new', {legal_name, terms_of_service, logo, address, city, state, zipcode})
+        const clientRes = await axios.post('/api/client/new', { client_name, signatory })
+        const featuresRes = await axios.post('/api/features/new', { title, description, price })
+        const termsRes = await axios.post('/api/terms/new', {effective_date, contract_length, autorenew, payment_frequency, collections_protection, chargeback_protection })
+        
+        let company_id = companyRes.data.id
+        let client_id = clientRes.data.id
+        let features_id = featuresRes.data.id 
+        let terms_id = termsRes.data.terms_id
+
+        await axios.post('/api/contracts/new', {contract_name, company_id, client_id, features_id, terms_id})
     }
 
 
@@ -21,7 +43,7 @@ class ContractPreview extends Component {
             <div className="contractpreview">
                 <div className="actualcontract">
                     <header>
-                        <img src={this.props.company.logo} alt="logo"/>
+                        <img className= 'thelogoimage' src={this.props.company.logo} alt="logo"/>
                         <div className="address">
                             <p>{this.props.company.address}</p>
                             <p>{this.props.company.city}</p>
@@ -75,7 +97,9 @@ unless otherwise specified by {this.props.company.company_name}</h4>
                     </div>
                 </div>
                 <div className="contractbuttons">
-                    <button>Save Contract</button>
+                    <button
+                    onClick={() => this.saveCompanyInfo()}
+                    >Save Contract</button>
                 </div>
             </div>
         )

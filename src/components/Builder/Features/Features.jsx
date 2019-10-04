@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 // import blackPlus from '../../../Assets/blackplus.png'
 import './Features.scss'
 import { Link } from 'react-router-dom'
-import axios from 'axios'
+// import axios from 'axios'
 import {handleFeaturesInfo} from '../../../ducks/featuresReducer'
 import { connect } from 'react-redux'
 
@@ -25,13 +25,13 @@ class Features extends Component {
 
     addFeaturesInfo = async () => {
         const { title, description, price } = this.state
-        await axios.post('/api/features/new', { title, description, price }).then(res => {
+        // await axios.post('/api/features/new', { title, description, price }).then(res => {
             // console.log(res.data)
             // const {legal_name: legalName} = res.data
-            this.props.handleFeaturesInfo(res.data.title, res.data.description, res.data.price)
+            this.props.handleFeaturesInfo(title,description,price)
             this.props.history.push('/builder/contractterms')
-        }
-        )
+        // }
+        // )
     }
 
     render() {

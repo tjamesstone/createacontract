@@ -34,6 +34,7 @@ app.post('/api/company/new/', contractCtrl.addCompany)
 app.post('/api/client/new/', contractCtrl.addClient)
 app.post('/api/features/new/', contractCtrl.addFeatures)
 app.post('/api/terms/new/', contractCtrl.addTerms)
+app.post('/api/contracts/new', contractCtrl.addContract)
 
 
 //MASSIVE AND APP LISTENING
