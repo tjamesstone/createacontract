@@ -10,7 +10,7 @@ class ContractTerms extends Component{
         super(props)
         this.state = {
             effective_date: '',
-            contract_length: '',
+            contract_length: null,
             autorenew: 'yes',
             payment_frequency: 'monthly',
             collections_protection: 'basic',
