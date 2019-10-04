@@ -1,6 +1,9 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import './ContractTerms.scss'
+import axios from 'axios'
+import {handleTermsInfo} from '../../../ducks/termsReducer'
+import {connect} from 'react-redux'
 
 class ContractTerms extends Component{
     constructor(props){
@@ -18,13 +21,23 @@ class ContractTerms extends Component{
         this.setState({
             [key] : e.target.value
         })
-        console.log(this.state)
+        // console.log(this.state)
+    }
+    addTermsInfo = async () => {
+        const { effective_date, contract_length, autorenew, payment_frequency, collections_protection, chargeback_protection} = this.state
+        await axios.post('/api/terms/new', {effective_date, contract_length, autorenew, payment_frequency, collections_protection, chargeback_protection }).then(res => {
+            // console.log(res.data)
+            
+            this.props.handleTermsInfo(res.data.effective_date, res.data.contract_length, res.data.autorenew, res.data.payment_frequency, res.data.collections_protection, res.data.chargeback_protection)
+            this.props.history.push('/builder/contractpreview')
+        }
+        )
     }
 
     render(){
         return(
             <div className="contractterms">
-                Step Three: Contract Terms
+                Contract Terms
                 <div className="whoareyouform">
                     <div className="effectivedate">
                         <p>Effective Date:</p>
@@ -76,11 +89,11 @@ class ContractTerms extends Component{
                 <div className="thebuttons">
                     <Link to='/builder/features'><button className='nextbutton' >Back to Features</button></Link>
                     
-                    <Link to='/builder/contractpreview'> <button className='nextbutton'>Finish</button> </Link>
+                     <button onClick={() => this.addTermsInfo()} className='nextbutton'>Finish</button> 
                 </div>
             </div>
         )
     }
 }
 
-export default ContractTerms
+export default connect(null, {handleTermsInfo}) (ContractTerms)
