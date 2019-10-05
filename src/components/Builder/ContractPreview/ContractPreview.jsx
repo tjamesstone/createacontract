@@ -118,6 +118,7 @@ unless otherwise specified by {this.props.company.company_name}</h4>
                     <div className="signature">
                         <p>By signing this contract, I hereby represent and warrant that I am duly authorized to execute this binding contract on behalf of the {this.props.client.client_name} named above, and I, {this.props.client.signatory} accept, on behalf of the client, all terms regardless of employment status, or usage of the platform. By accepting this agreement, I give Grow permission to charge the client with the payment method provided according to the payment terms.</p>
                         <div className="signatory">
+                            
                             <h6>{this.props.client.signatory}</h6>
                             <div className="thedate">
                                 <p>________________________________</p>
