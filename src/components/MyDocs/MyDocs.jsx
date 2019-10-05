@@ -8,8 +8,15 @@ class MyDocs extends Component{
     constructor(props){
     super(props)
     this.state = {
-
+        userDocs: true,
+        docs: []
+        }
     }
+
+    handleChange(key, e){
+        this.setState({
+            [key]: e.target.value
+        })
     }
 
     render(){
