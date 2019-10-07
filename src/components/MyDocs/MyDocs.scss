@@ -36,3 +36,51 @@
 .newdoccontainer:hover{
     cursor: pointer;
 }
+.listofdocsactual{
+    display: flex;
+    flex-direction: row;
+}
+.listofdocs{
+    display: flex;
+    flex-direction: column;
+}
+.listofdocstitle{
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 1rem;
+}
+.individualdoc{
+    height: 180px;
+    width: 135px;
+    margin: 1rem;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    box-shadow: 1px 1px 15px 1px #888888;
+    background: $lightWhite;
+    position: relative;
+}
+.individualdoc:hover{
+    cursor: pointer;
+    .clicktoviewdetails{
+        color: $blue;
+    }
+}
+.individualcontracttitle{
+    color: black;
+    text-decoration: underline;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    
+}
+.clicktoviewdetails{
+    color: $lightWhite;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-left:10px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-style: italic;
+}

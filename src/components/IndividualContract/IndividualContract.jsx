@@ -1,60 +1,16 @@
-import React, { Component } from 'react'
-import './ContractPreview.scss'
-// import {Document, Page} from 'react-pdf'
-import { connect } from 'react-redux'
-import axios from 'axios'
+import React, {Component} from 'react'
 
-class ContractPreview extends Component {
-    constructor(props) {
+class IndividualContract extends Component{
+    constructor(props){
         super(props)
         this.state = {
-            contract_name: ''
-        }
-    }
-    handleChange = (e, key) => {
-        this.setState({
-            [key]: e.target.value
-        })
-    }
 
-    saveCompanyInfo = async () => {
-
-        if(this.state.contract_name !== ''){
-        // console.log(this.props)
-        const { contract_name } = this.state
-        const { legal_name, terms_of_service, logo, address, city, state, zipcode } = this.props.company
-        const { client_name, signatory } = this.props.client
-        const { title, description, price } = this.props.features
-        const { effective_date, contract_length, autorenew, payment_frequency, collections_protection, chargeback_protection } = this.props.terms
-        // console.log(legal_name)
-        const companyRes = await axios.post('/api/company/new', { legal_name, terms_of_service, logo, address, city, state, zipcode })
-        const clientRes = await axios.post('/api/client/new', { client_name, signatory })
-        const featuresRes = await axios.post('/api/features/new', { title, description, price })
-        const termsRes = await axios.post('/api/terms/new', { effective_date, contract_length, autorenew, payment_frequency, collections_protection, chargeback_protection })
-
-        let company_id = companyRes.data.id
-        let client_id = clientRes.data.id
-        let features_id = featuresRes.data.id
-        let terms_id = termsRes.data.id
-
-        await axios.post('/api/contracts/new', { contract_name, company_id, client_id, features_id, terms_id })
-        } else if(this.state.contract_name === ''){
-            alert('Give your contract a name first, then try saving again')
         }
     }
 
-
-
-    render() {
-        // var day = new Date().getDate();
-        // var month = new Date().getMonth() + 1; //Current Month
-        // var year = new Date().getFullYear(); //Current Year
-        return (
-            <div className="contractpreview">
-                <div className="contractname">
-                    <p>Name this contract:</p>
-                    <input name='contract_name' placeholder='Contract Name' onChange={e => this.handleChange(e, 'contract_name')} value={this.state.contract_name} type="text" />
-                </div>
+    render(){
+        return(
+            <div className="individualcontract">
                 <div className="actualcontract">
                     <header>
                         <div className="logoandaddress">
@@ -132,18 +88,9 @@ unless otherwise specified by {this.props.company.company_name}</h4>
                         </div>
                     </div>
                 </div>
-                <div className="contractbuttons">
-                    <button
-                        onClick={() => this.saveCompanyInfo()}
-                    >Save Contract</button>
-                </div>
             </div>
         )
     }
 }
-const mapStateToProps = reduxState => {
-    const { user, company, client, features, terms } = reduxState
-    return { user, company, client, features, terms }
-}
 
-export default connect(mapStateToProps)(ContractPreview)
+export default IndividualContract

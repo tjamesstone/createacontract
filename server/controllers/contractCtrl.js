@@ -33,5 +33,20 @@ module.exports = {
         const {contract_name, company_id, client_id, features_id, terms_id} = req.body
         const contractInfo = await db.add_contract([contract_name, company_id, client_id, features_id, terms_id, userid])
         res.status(200).send(contractInfo[0])
+    },
+    getDocuments: async (req, res) => {
+        const db = req.app.get('db')
+        const {userid} = req.session
+        db.get_all_documents()
+        .then( result => {
+            const filteredResult = result.filter(el => el.user_id === +userid)
+            res.status(200).send(filteredResult)
+           
+        })
+        .catch(err => {
+            console.log(`Problem with getting all documents: ${err}`)
+            res.status(500).send(`Problem with getting all docuemnts: ${err}`)
+        })
+
     }
 }
