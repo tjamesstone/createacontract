@@ -69,5 +69,32 @@ module.exports = {
             console.log(`Problem with getting one document: ${err}`)
             res.status(500).send(`Problem with getting one docuemnt: ${err}`)
         })
+    },
+    deleteDoc: (req, res) => {
+        const db = req.app.get('db')
+        const {id} = req.params
+        db.delete_doc([id])
+        .then( result => {
+            res.sendStatus(200)
+       })
+       .catch( err => {
+           console.log(`Error with deleting a doc: ${err}`)
+           res.status(500).send(`Error with deleting a doc: ${err}`)
+       })
+    },
+    editDoc: (req, res) => {
+        const db = req.app.get('db')
+        let {contract_name} = req.body
+        let {id} = req.params
+
+        db.update(id, contract_name)
+        .then(result => {
+            res.sendStatus(200)
+        })
+        .catch(err => {
+            console.log(`error: ${err}`)
+      res.status(500).send(`Yo error ${err}`)
+
+        })
     }
 }

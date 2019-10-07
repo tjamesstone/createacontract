@@ -39,6 +39,9 @@ app.post('/api/contracts/new', contractCtrl.addContract)
 app.get('/api/documents', contractCtrl.getDocuments)
 app.get('/api/doc/:id', contractCtrl.getOneDocument)
 
+app.delete('/api/doc/:id', contractCtrl.deleteDoc)
+app.put('/api/doc/:id', contractCtrl.editDoc)
+
 
 //MASSIVE AND APP LISTENING
 
