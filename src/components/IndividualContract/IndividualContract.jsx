@@ -28,7 +28,8 @@ class IndividualContract extends Component {
             terms_of_service: '',
             title: '',
             user_id: '',
-            zipcode: 0
+            zipcode: 0,
+            showInput: false,
 
 
         }
@@ -36,12 +37,24 @@ class IndividualContract extends Component {
     componentDidMount() {
         this.getOneDocument()
     }
+    handleChange = (e, key) => {
+        this.setState({
+            [key]: e.target.value
+        })
+    }
+    changeShowInput = () => {
+        this.setState({
+            showInput: !this.state.showInput
+        })
+    }
 
-    updateProduct = async () => {
+    updateDoc = async () => {
         let update = {
             contract_name: this.state.contract_name
         }
-        await axios.post(`/api/doc/${this.state.id}`, update)
+
+        await axios.put(`/api/doc/${this.state.id}`, update)
+        this.changeShowInput()
     }
 
     getOneDocument = async () => {
@@ -71,6 +84,7 @@ class IndividualContract extends Component {
             zipcode: res.data[0].zipcode
         })
         // console.log(this.state)
+
     }
 
     render() {
@@ -78,7 +92,17 @@ class IndividualContract extends Component {
 
             <div className="individualcontract">
                 <HomeHeader />
-                <h3 className='contracttitlebyid'>{this.state.contract_name}</h3>
+                <div className="editthetitle">
+                    {this.state.showInput === false ?
+                    <h3 onDoubleClick={() => this.changeShowInput()} className='contracttitlebyid'>{this.state.contract_name}</h3>
+                    : <div className="updatebox">
+                        <input name='contract_name' placeholder='Contract Name' onChange={e => this.handleChange(e, 'contract_name')} value={this.state.contract_name} type="text"/>
+                        <button className='backtodocs' onClick={() => this.updateDoc()}>Edit</button>
+                        <button className='backtodocs' onClick={() => this.changeShowInput()} >Cancel</button>
+                    </div>
+
+                    }
+                </div>
                 <div className="actualcontract">
                     <header>
                         <div className="logoandaddress">
