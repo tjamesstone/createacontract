@@ -84,7 +84,7 @@ class CompanyInfo extends Component{
                 
                 {/* <Link to='/builder/features'> */}
                 <button className='nextbutton' onClick={() => this.addCompanyInfo()}
-                >Next to Features</button>
+                >Next to Client Info</button>
                 {/* </Link> */}
                 </div>
             </div>

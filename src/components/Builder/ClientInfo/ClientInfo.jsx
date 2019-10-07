@@ -33,6 +33,7 @@ class ClientInfo extends Component {
     render() {
         return (
             <div className="clientinfo">
+                Client Info
                 <div className="clientform">
                     <div className="clientname">
                         <p>Legal Name of Client:</p>
@@ -45,7 +46,7 @@ class ClientInfo extends Component {
                     </div>
                 </div>
                 <div className="thebuttons">
-                    <Link to='/builder/clientinfo'><button className='nextbutton' >Back to Company Info</button></Link>
+                    <Link to='/builder/companyinfo'><button className='nextbutton' >Back to Company Info</button></Link>
                    <button onClick={() => this.addClientInfo()}
                    className='nextbutton'>Next to Features</button>
                 </div>

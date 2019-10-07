@@ -20,7 +20,7 @@ class Builder extends Component{
         return(
             <div className="builder">
                 <HomeHeader />
-                Builder
+                
                 <Switch>
                     <Route path ='/builder/companyinfo' component={CompanyInfo}/>
                     <Route path ='/builder/features' component={Features}/>

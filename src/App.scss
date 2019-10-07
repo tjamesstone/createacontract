@@ -16,5 +16,18 @@ $blue: #66BBFF;
 
 button:focus {outline:0;}
 
+input{
+  background: none;
+  border: 2px $lightGreen solid;
+  border-radius: 10px;
+  height: 1.5rem;
+  color: $lightGreen;
+  font-size: 13px;
+}
+input::placeholder{
+  color: $lightGreen;
+  opacity: .5;
+}
+
 
 
