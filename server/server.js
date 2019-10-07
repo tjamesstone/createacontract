@@ -37,6 +37,7 @@ app.post('/api/terms/new/', contractCtrl.addTerms)
 app.post('/api/contracts/new', contractCtrl.addContract)
 
 app.get('/api/documents', contractCtrl.getDocuments)
+app.get('/api/doc/:id', contractCtrl.getOneDocument)
 
 
 //MASSIVE AND APP LISTENING

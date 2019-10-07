@@ -48,5 +48,26 @@ module.exports = {
             res.status(500).send(`Problem with getting all docuemnts: ${err}`)
         })
 
+    },
+    getOneDocument: async (req, res) => {
+        const db = req.app.get('db')
+        // console.log(req.params)
+        const {id} = req.params
+        const {userid} = req.session
+        // console.log(userid)
+        
+        await db.get_one_document(id).then(result => {
+            // console.log(result)
+            // console.log(result.id)
+            if(result[0].user_id === userid){
+
+            res.status(200).send(result)
+            } else {
+                res.status(401).send('Unathorized')
+            }
+        }).catch(err => {
+            console.log(`Problem with getting one document: ${err}`)
+            res.status(500).send(`Problem with getting one docuemnt: ${err}`)
+        })
     }
 }

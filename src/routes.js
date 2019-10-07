@@ -12,6 +12,6 @@ export default (
         <Route path='/mydocs' component={MyDocs}/>
         <Route path='/builder' component={Builder}/>
         <Route path='/homeauth' component={HomeAuth}/>
-        <Route path='/doc/:docid' component={IndividualContract}/>
+        <Route path='/doc/:id' component={IndividualContract}/>
     </Switch>
 )
