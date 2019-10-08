@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 import axios from 'axios'
 import {connect} from 'react-redux'
 import {handleUser} from '../../../ducks/reducer'
+import swal from 'sweetalert2'
 
 
 class Login extends Component{
@@ -28,7 +29,8 @@ class Login extends Component{
             this.props.handleUser(res.data.email)
             this.props.history.push('/')
         } else {
-            alert(`${res.data.message}`)
+            swal.fire({type: 'error', title: 'Oops...', text:`Your email and password don't seem right, check your spelling and try again.`})
+
         }
     }
 
@@ -45,7 +47,7 @@ class Login extends Component{
                 </div>
                 <div className="password">
                     <p>password:</p>
-                    <input name='password' placeholder='Password' onChange={e => this.handleChange(e, 'password')} value={this.state.password} type="text"/>
+                    <input name='password' placeholder='Password' onChange={e => this.handleChange(e, 'password')} value={this.state.password} type="password"/>
                 </div>
                 
                 <div className="registerbutton">

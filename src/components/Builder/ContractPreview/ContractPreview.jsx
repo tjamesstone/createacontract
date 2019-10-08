@@ -3,6 +3,7 @@ import './ContractPreview.scss'
 // import {Document, Page} from 'react-pdf'
 import { connect } from 'react-redux'
 import axios from 'axios'
+import swal from 'sweetalert2'
 
 class ContractPreview extends Component {
     constructor(props) {
@@ -39,8 +40,10 @@ class ContractPreview extends Component {
 
         await axios.post('/api/contracts/new', { contract_name, company_id, client_id, features_id, terms_id })
         } else if(this.state.contract_name === ''){
-            alert('Give your contract a name first, then try saving again')
+            return swal.fire({type: 'error', text: 'Give your contract a name first, then try saving again'})
         }
+        this.props.history.push('/mydocs')
+
     }
 
 
@@ -53,7 +56,7 @@ class ContractPreview extends Component {
             <div className="contractpreview">
                 <div className="contractname">
                     <p>Name this contract:</p>
-                    <input name='contract_name' placeholder='Contract Name' onChange={e => this.handleChange(e, 'contract_name')} value={this.state.contract_name} type="text" />
+                    <input className='namethiscontractinput' name='contract_name' placeholder='Contract Name' onChange={e => this.handleChange(e, 'contract_name')} value={this.state.contract_name} type="text" />
                 </div>
                 <div className="actualcontract">
                     <header>
@@ -154,8 +157,8 @@ unless otherwise specified by {this.props.company.legal_name}. Additionally all 
                         </div>
                     </div>
                 </div>
-                <div className="contractbuttons">
-                    <button
+                <div className="thebuttons">
+                    <button className='loginbutton contractlol'
                         onClick={() => this.saveCompanyInfo()}
                     >Save Contract</button>
                 </div>

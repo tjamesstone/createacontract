@@ -35,7 +35,7 @@ const companyReducer = (state = initialState, action) => {
         case CLEAR_COMPANY_STATE:
             return {...state, legal_name: '', terms_of_service: '', logo: '', address: '', city: '', state: '', zipcode: ''}
         case HANDLE_COMPANY_INFO:
-            console.log(action.payload)
+            // console.log(action.payload)
             return {...state, legal_name: action.payload.legal_name, terms_of_service: action.payload.terms_of_service, logo: action.payload.logo, address: action.payload.address, city: action.payload.city, state: action.payload.state, zipcode: action.payload.zipcode}
             default:
                 return state

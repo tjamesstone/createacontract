@@ -5,11 +5,15 @@
     display: flex;
     align-content: center;
     flex-direction: column;
+    background: #e4e4e4;
 }
 
 //Below here is the CSS for the actual contract
 .thelogoimage{
     width: 40px;
+}
+.namethiscontractinput{
+    width: 18rem;
 }
 .contracttitlebyid:hover{
     cursor: pointer;
@@ -84,6 +88,15 @@
 .theactualterm{
     display: flex;
     margin: .5rem;
+    h4{
+        display: flex;
+        justify-content: flex-start;
+        width: 11rem;
+        margin: 0;
+    }
+    p{
+        margin-left: 0;
+    }
 }
 .theactualtermtext{
     display: flex;
@@ -91,16 +104,39 @@
 .thepaymentterms{
     display: flex;
     margin: .5rem;
+    margin-left: 0;
+    h4{
+        display: flex;
+        justify-content: flex-start;
+        width: 11rem;
+        margin: 0;
+    }
 
 }
 .taxcompliance{
     display: flex;
     margin: .5rem;
+    margin-left: 0;
+    h4{
+        width: 22rem;
+        justify-content: flex-start;
+        display: flex;
+
+
+    }
 
 }
 .thecancellationpolicy{
     display: flex;
     margin: .5rem;
+    margin-left: 0;
+    padding-left: 0;
+    h4{
+        width: 10rem;
+        display: flex;
+        justify-content: flex-start;
+
+    }
 
 }
 .address{
@@ -128,6 +164,7 @@
 .actualcontract{
     width: 595px;
     height: 842px;
+    background: white;
     max-width: 850px;
     max-height: 1100px;
     border: 1px black solid;
@@ -165,6 +202,10 @@
 .thesignatory{
     font-size: 13px;
     margin: 20px auto;
+}
+.contractlol{
+    width: 10rem;
+    margin: 1rem auto;
 }
 .thedate{
     display: flex;

@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 import axios from 'axios'
 import {connect} from 'react-redux'
 import {handleUser} from '../../../ducks/reducer'
+import swal from 'sweetalert2'
 
 class Register extends Component{
     constructor(props){
@@ -23,18 +24,18 @@ class Register extends Component{
     }
 
     register = async () => {
-        if(this.reenterPassword === this.state.password){
+        if(this.state.reenterPassword === this.state.password){
         const {first_name, last_name, email, password} = this.state
         const res = await axios.post('/auth/register', {first_name, last_name, email, password})
         if(res.data.email){
-
+            console.log(res.data.email)
             this.props.handleUser(res.data.id, res.data.email, res.data.first_name, res.data.last_name)
             this.props.history.push('/')
         } else {
-            alert(`${res.data.message}`)
+            swal.fire({type: 'error', title: 'Oops...', text:`${res.data.message}`})
         }
     } else{
-        alert('Make sure your passwords match')
+        swal.fire({type: 'error', title: 'Oops...', text:'Make sure your passwords match'})
     }
     }
 
