@@ -12,7 +12,8 @@ class Register extends Component{
             first_name: '',
             last_name: '',
             email: '',
-            password: ''
+            password: '',
+            reenterPassword: ''
         }
     }
     handleChange = (e, key) => {
@@ -22,6 +23,7 @@ class Register extends Component{
     }
 
     register = async () => {
+        if(this.reenterPassword === this.state.password){
         const {first_name, last_name, email, password} = this.state
         const res = await axios.post('/auth/register', {first_name, last_name, email, password})
         if(res.data.email){
@@ -31,6 +33,9 @@ class Register extends Component{
         } else {
             alert(`${res.data.message}`)
         }
+    } else{
+        alert('Make sure your passwords match')
+    }
     }
 
   
@@ -57,11 +62,11 @@ class Register extends Component{
                         </div>
                         <div className="password">
                             <p>password:</p>
-                            <input name='password' placeholder='Password' onChange={e => this.handleChange(e, 'password')} value={this.state.password} type="text"/>
+                            <input name='password' placeholder='Password' onChange={e => this.handleChange(e, 'password')} value={this.state.password} type="password"/>
                         </div>
                         <div className="reenterpassword">
                             <p>re-enter password:</p>
-                            <input type="password"/>
+                            <input name='reenterPassword' placeholder='Re-Enter Password' onChange={e => this.handleChange(e, 'reenterPassword')} value={this.state.reenterPassword} type="password"/>
                         </div>
                         <div className="registerbutton">
                             <button className='theotherbutton' onClick={() => this.register()} >Register</button>
