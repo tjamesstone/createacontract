@@ -31,7 +31,7 @@
     align-items: center;
 }
 .termstext{
-    font-size: 13px;
+    font-size: 8px;
     font-weight: 100;
     margin: 0 ;
     padding-left: 1rem;
@@ -58,12 +58,12 @@
 .officialcontract{
     p{
         margin: .2rem;
-        font-size: 15px;
+        font-size: 8px;
     }
     
 }
 .preparedon{
-    font-size: 10px;
+    font-size: 8px;
     max-width: 120px;
     width: 120px;
     max-height: 107px;
@@ -79,28 +79,28 @@
 }
 .theeffectiveda{
     display: flex;
-    margin: 1rem;
+    margin: .5rem;
 }
 .theactualterm{
     display: flex;
-    margin: 1rem;
+    margin: .5rem;
 }
 .theactualtermtext{
     display: flex;
 }
 .thepaymentterms{
     display: flex;
-    margin: 1rem;
+    margin: .5rem;
 
 }
 .taxcompliance{
     display: flex;
-    margin: 1rem;
+    margin: .5rem;
 
 }
 .thecancellationpolicy{
     display: flex;
-    margin: 1rem;
+    margin: .5rem;
 
 }
 .address{
@@ -122,17 +122,18 @@
     margin-bottom: 1rem;
 }
 .haha{
-    font-size: 14px;
+    font-size: 8px;
     font-weight: 600;
 }
 .actualcontract{
-    width: 850px;
-    height: 1100px;
+    width: 595px;
+    height: 842px;
     max-width: 850px;
     max-height: 1100px;
     border: 1px black solid;
     padding: 1rem;
     margin: 1rem auto;
+    overflow:visible;
     font-family: 'Assistant', sans-serif;
     h4{
         margin: 0;
@@ -158,12 +159,12 @@
 }
 .fineprint{
     font-style: italic;
-    font-size: 10px;
+    font-size: 8px;
     max-height: 40px;
 }
 .thesignatory{
-    font-size: 24px;
-    margin: 10px auto;
+    font-size: 13px;
+    margin: 5px auto;
 }
 .thedate{
     display: flex;

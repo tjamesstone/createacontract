@@ -2,6 +2,10 @@ import React, {Component} from 'react'
 import axios from 'axios'
 import './TheContract.scss'
 import {withRouter} from 'react-router-dom'
+import html2canvas from 'html2canvas'
+import jsPDF from 'jspdf'
+
+ 
 
 
 class TheContract extends Component{
@@ -31,10 +35,34 @@ class TheContract extends Component{
             zipcode: 0,
             showInput: false
         }
+        this.contractRef = React.createRef()
+        this.pdfDocument = this.pdfDocument.bind(this)
     }
     componentDidMount() {
         this.getOneDocument()
     }
+    
+    pdfDocument(){
+        const input = document.getElementById('whattosave')
+        // const input = this.contractRef.current.outerHTML
+        // console.log(input)
+        html2canvas(input, { y: 134})
+        // html2canvas(input)
+        .then((canvas) => {
+            // console.log(canvas)
+            const imgData = canvas.toDataURL('image/png')
+            const pdf = new jsPDF()
+            
+            pdf.addImage(imgData, 'JPEG', 0, 0)
+            // console.log(pdf)
+            pdf.save('download.pdf')
+        })
+        .catch( err => {
+            console.log(`There's an error: ${err}`)
+        })
+    }
+  
+    
 
     getOneDocument = async () => {
         const res = await axios.get(`/api/doc/${this.props.match.params.id}`)
@@ -64,9 +92,13 @@ class TheContract extends Component{
         })
     }
 
+    
     render() {
+       
         return(
-            <div className="actualcontract">
+            <div className="parent">
+            <div id='whattosave' className="actualcontract" ref={this.contractRef}
+      >
                     <header>
                         <div className="logoandaddress">
                             <img className='thelogoimage' src={this.state.logo} alt="logo" />
@@ -163,6 +195,8 @@ unless otherwise specified by {this.state.legal_name}. Additionally all fees wil
                             </div>
                         </div>
                     </div>
+                </div>
+                <button onClick={this.pdfDocument} >SAVE PDF</button>
                 </div>
         )
     }

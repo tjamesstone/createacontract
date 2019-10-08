@@ -5,6 +5,7 @@ import './IndividualContract.scss'
 import {Link} from 'react-router-dom'
 import TheContract from './TheContract/TheContract'
 
+
 class IndividualContract extends Component {
     constructor(props) {
         super(props)
@@ -42,6 +43,7 @@ class IndividualContract extends Component {
             [key]: e.target.value
         })
     }
+    
     changeShowInput = () => {
         this.setState({
             showInput: !this.state.showInput
@@ -88,6 +90,7 @@ class IndividualContract extends Component {
     }
 
     render() {
+       
         return (
 
             <div className="individualcontract">
@@ -105,7 +108,8 @@ class IndividualContract extends Component {
                     
                     
                 </div>
-                <TheContract/>
+                <TheContract />
+                
                 <div className="contractbuttons">
                 <Link to='/mydocs'> <button className='backtodocs' >Back to My Docs</button></Link>
                 <button className='backtodocs' >Save as PDF</button>
