@@ -25,20 +25,21 @@ app.use(session({
 app.post('/auth/register', authCtrl.register)
 app.post('/auth/login', authCtrl.login)
 app.delete('/auth/logout', authCtrl.logout )
-
 app.get('/api/auth/me', authCtrl.findUser)
 
 
 //CONTRACT ENDPOINTS
+
+//BUILDER ENDPOINTS
 app.post('/api/company/new/', contractCtrl.addCompany)
 app.post('/api/client/new/', contractCtrl.addClient)
 app.post('/api/features/new/', contractCtrl.addFeatures)
 app.post('/api/terms/new/', contractCtrl.addTerms)
 app.post('/api/contracts/new', contractCtrl.addContract)
 
+//DOCUMENTS ENDPOINTS
 app.get('/api/documents', contractCtrl.getDocuments)
 app.get('/api/doc/:id', contractCtrl.getOneDocument)
-
 app.delete('/api/doc/:id', contractCtrl.deleteDoc)
 app.put('/api/doc/:id', contractCtrl.editDoc)
 
