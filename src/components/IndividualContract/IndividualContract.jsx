@@ -110,10 +110,7 @@ class IndividualContract extends Component {
                 </div>
                 <TheContract />
                 
-                <div className="contractbuttons">
-                <Link to='/mydocs'> <button className='backtodocs' >Back to My Docs</button></Link>
-                <button className='backtodocs' >Save as PDF</button>
-                </div>
+                
 
             </div>
         )

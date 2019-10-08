@@ -4,6 +4,7 @@ import './TheContract.scss'
 import {withRouter} from 'react-router-dom'
 import html2canvas from 'html2canvas'
 import jsPDF from 'jspdf'
+import {Link} from 'react-router-dom'
 
  
 
@@ -46,16 +47,16 @@ class TheContract extends Component{
         const input = document.getElementById('whattosave')
         // const input = this.contractRef.current.outerHTML
         // console.log(input)
-        html2canvas(input, { y: 134})
+        html2canvas(input, { y: 134, scale: 2})
         // html2canvas(input)
         .then((canvas) => {
             // console.log(canvas)
-            const imgData = canvas.toDataURL('image/png')
+            const imgData = canvas.toDataURL('image/svg')
             const pdf = new jsPDF()
             
-            pdf.addImage(imgData, 'JPEG', 0, 0)
+            pdf.addImage(imgData, 'JPEG', 0, 0, 210, 298)
             // console.log(pdf)
-            pdf.save('download.pdf')
+            pdf.save('contract.pdf')
         })
         .catch( err => {
             console.log(`There's an error: ${err}`)
@@ -196,7 +197,10 @@ unless otherwise specified by {this.state.legal_name}. Additionally all fees wil
                         </div>
                     </div>
                 </div>
-                <button onClick={this.pdfDocument} >SAVE PDF</button>
+                <div className="contractbuttons">
+                <Link to='/mydocs'> <button className='backtodocs' >Back to My Docs</button></Link>
+                <button className='backtodocs' onClick={() => this.pdfDocument()} >Save as PDF</button>
+                </div>
                 </div>
         )
     }
