@@ -11,6 +11,10 @@
 .thelogoimage{
     width: 40px;
 }
+.contracttitlebyid:hover{
+    cursor: pointer;
+    color: $onHover;
+}
 
 .offeredservice{
     display: flex;
@@ -98,6 +102,17 @@
     display: flex;
     margin: 1rem;
 
+}
+.address{
+    max-height: 60px;
+    p{
+        margin: 0 auto;
+    }
+}
+.updatebox{
+    input{
+        color: black;
+    }
 }
 .logoandaddress{
     font-size: 10px;
