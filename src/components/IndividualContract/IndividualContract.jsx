@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import HomeHeader from '../Header/HomeHeader/HomeHeader'
 import './IndividualContract.scss'
-import {Link} from 'react-router-dom'
 import TheContract from './TheContract/TheContract'
 
 
@@ -100,7 +99,7 @@ class IndividualContract extends Component {
                     <h3 onDoubleClick={() => this.changeShowInput()} className='contracttitlebyid'>{this.state.contract_name}</h3>
                     : <div className="updatebox">
                         <input name='contract_name' placeholder='Contract Name' onChange={e => this.handleChange(e, 'contract_name')} value={this.state.contract_name} type="text"/>
-                        <button className='backtodocs' onClick={() => this.updateDoc()}>Edit</button>
+                        <button className='backtodocs' onClick={() => this.updateDoc()}>Save Changes</button>
                         <button className='backtodocs' onClick={() => this.changeShowInput()} >Cancel</button>
                     </div>
 

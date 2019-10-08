@@ -37,11 +37,13 @@ class ContractTerms extends Component{
     render(){
         return(
             <div className="contractterms">
-                Contract Terms
+                
                 <div className="whoareyouform">
+                <h2 className='whotitle'
+                    >What Are The Terms?</h2>
                     <div className="effectivedate">
                         <p>Effective Date:</p>
-                        <input name='effective_date' placeholder='Effective Date' onChange={e => this.handleChange(e, 'effective_date')} value={this.state.effective_date} type="text"/>
+                        <input name='effective_date' placeholder='Effective Date' onChange={e => this.handleChange(e, 'effective_date')} value={this.state.effective_date} type="date"/>
                     </div>
                     <div className="contractlength">
                         <p>Contract Length:</p>

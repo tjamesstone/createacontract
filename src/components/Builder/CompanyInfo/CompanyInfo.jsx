@@ -15,7 +15,7 @@ class CompanyInfo extends Component{
             address: '',
             city: '',
             state: '',
-            zipcode: 0
+            zipcode: null
         }
     }
     
@@ -75,7 +75,7 @@ class CompanyInfo extends Component{
                     </div>
                     <div className="zip">
                         <p>Zip Code:</p>
-                        <input name='zipcode' placeholder='Zip Code' onChange={e => this.handleChange(e, 'zipcode')} value={this.state.zipcode} type="text"/>
+                        <input name='zipcode' placeholder='Zip Code' onChange={e => this.handleChange(e, 'zipcode')} value={this.state.zipcode} type="number"/>
                     </div>
                     
                 </div>

@@ -28,7 +28,7 @@
     justify-content: center;
     align-items: center;
     box-shadow: 1px 1px 15px 1px #888888;
-    background: $lightWhite;
+    background: #e4e4e4;
     img{
         width: 48px;
     }
@@ -84,3 +84,33 @@
     font-size: 15px;
     font-style: italic;
 }
+@media screen and (max-width: 500px) {
+    .newdoccontainer{
+        width: 67.5px;
+        height: 90px;
+    }
+    .individualdoc{
+        width: 67.5px;
+        height: 90px;
+        p{
+            font-size: 12px;
+        }
+
+    }
+    .clicktoviewdetails{
+        display: none;
+    }
+    .newdoc{
+        p{
+            font-size: 15px;
+        }
+    }
+    .listofdocstitle{
+        p{
+            font-size: 15px;
+        }
+    }
+    .therealdocs{
+        width: 90%;
+    }
+ }

@@ -17,17 +17,34 @@ $blue: #66BBFF;
 button:focus {outline:0;}
 
 input{
-  background: none;
+  background: $mainGrey;
   border: 2px $lightGreen solid;
   border-radius: 10px;
   height: 1.5rem;
-  color: $lightGreen;
+  color: black;
   font-size: 13px;
+  font-family: 'Assistant', sans-serif;
 }
 input::placeholder{
-  color: $lightGreen;
+  color: black;
   opacity: .5;
+  font-size: 10px;
 }
+select{
+  background: $mainGrey;
+  border: 2px $lightGreen solid;
+  border-radius: 10px;
+  height: 1.5rem;
+  color: black;
+  font-size: 13px;
 
+}
+textarea{
+  background: $mainGrey;
+  border: 2px $lightGreen solid;
+  border-radius: 10px;
+  color: black;
+  font-size: 13px;
+}
 
 

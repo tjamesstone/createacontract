@@ -13,7 +13,7 @@ class Features extends Component {
         this.state = {
             title: '',
             description: '',
-            price: 0
+            price: null
         }
     }
     handleChange = (e, key) => {
@@ -37,7 +37,9 @@ class Features extends Component {
     render() {
         return (
             <div className="features">
-                <div className="info">
+                <div className="whoareyouform">
+                <h2 className='whotitle'
+                    >What Are You Offering?</h2>
                     <div className="featuretitle">
                         <p>Title of Feature/Service:</p>
                         <input name='title' placeholder='Title of Service or Features' onChange={e => this.handleChange(e, 'title')} value={this.state.title} type="text" />

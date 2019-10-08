@@ -33,8 +33,10 @@ class ClientInfo extends Component {
     render() {
         return (
             <div className="clientinfo">
-                Client Info
-                <div className="clientform">
+                
+                <div className="whoareyouform">
+                <h2 className='whotitle'
+                    >Who's Your Client?</h2>
                     <div className="clientname">
                         <p>Legal Name of Client:</p>
                         <input name='client_name' placeholder='Legal Name of Client' onChange={e => this.handleChange(e, 'client_name')} value={this.state.client_name} type="text" />

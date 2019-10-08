@@ -6,6 +6,7 @@ import Features from './Features/Features'
 import HomeHeader from '../Header/HomeHeader/HomeHeader'
 import ContractPreview from './ContractPreview/ContractPreview'
 import ClientInfo from './ClientInfo/ClientInfo'
+import './Builder.scss'
 
 
 class Builder extends Component{
