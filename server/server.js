@@ -6,8 +6,10 @@ const massive = require('massive')
 const session = require('express-session')
 const contractCtrl = require('./controllers/contractCtrl.js')
 const authCtrl = require('./controllers/authCtrl')
+const stripe = require("stripe")("sk_test_FFifD8c4zMyr59GvISOEkoRu00Pg7AEj8C")
 
 const app = express()
+
 
 
 
