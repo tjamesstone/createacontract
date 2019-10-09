@@ -27,3 +27,12 @@
     justify-content: space-between;
     width: 50%;
 }
+
+
+@media screen and (max-width: 500px) {
+
+.backtodocs{
+    font-size: 8px;
+    width: 3rem;
+}
+}

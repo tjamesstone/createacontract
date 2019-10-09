@@ -4,4 +4,33 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: #e4e4e4;
 }
+.theshininginput::-webkit-calendar-picker-indicator {
+    color: rgba(0, 0, 0, 0);
+    opacity: 1;
+    display: block;
+    background: url(https://image.flaticon.com/icons/png/512/55/55281.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    border-width: thin;
+    }
+    select:after {
+        position: absolute;
+        content: "";
+        top: 14px;
+        right: 10px;
+        width: 0;
+        height: 0;
+        border: 6px solid transparent;
+        border-color: #fff transparent transparent transparent;
+      }
+    select{
+        display:inline-block;
+        border: 1px solid darkgray;
+        width:100px;
+        background:url("/Style Library/Nifgashim/Images/drop_arrrow.png") no-repeat 10px 10px;
+        position:relative;
+    }

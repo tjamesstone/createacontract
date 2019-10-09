@@ -13,6 +13,7 @@ $blue: #66BBFF;
 .App {
   text-align: center;
   background: #e4e4e4;
+  max-width: 100vw;
 }
 
 button:focus {outline:0;}
@@ -46,6 +47,11 @@ textarea{
   border-radius: 10px;
   color: black;
   font-size: 13px;
+}
+@media screen and (max-width: 500px) {
+  .app{
+      max-width: 100vw;
+  }
 }
 
 

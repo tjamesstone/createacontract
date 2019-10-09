@@ -22,6 +22,7 @@
     border-radius: 10px;
     font-size: 29px; 
     padding: 10px;
+    flex-wrap: wrap;
 }
 .newdoccontainer{
     height: 180px;
@@ -76,6 +77,9 @@
     margin-left: 5px;
     margin-right: 5px;
     
+}
+.listofdocsactual{
+    flex-wrap: wrap;
 }
 .clicktoviewdetails{
     color: $lightWhite;

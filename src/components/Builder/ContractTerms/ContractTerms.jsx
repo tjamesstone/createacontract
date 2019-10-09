@@ -35,6 +35,7 @@ class ContractTerms extends Component{
     }
 
     render(){
+        
         return(
             <div className="contractterms">
                 
@@ -43,12 +44,12 @@ class ContractTerms extends Component{
                     >What Are The Terms?</h2>
                     <div className="effectivedate">
                         <p>Effective Date:</p>
-                        <input name='effective_date' placeholder='Effective Date' onChange={e => this.handleChange(e, 'effective_date')} value={this.state.effective_date} type="date"/>
+                        <input className='theshininginput' name='effective_date' placeholder='Effective Date' onChange={e => this.handleChange(e, 'effective_date')} value={this.state.effective_date} type="date"/>
                     </div>
                     <div className="contractlength">
-                        <p>Contract Length:</p>
-                        <input name='contract_length' placeholder='Contract Length' onChange={e => this.handleChange(e, 'contract_length')} value={this.state.contract_length} type="number"/>
-                        <p>months</p>
+                        <p>Contract Length (in months):</p>
+                        <input name='contract_length' placeholder='# of months' onChange={e => this.handleChange(e, 'contract_length')} value={this.state.contract_length} type="number"/>
+                        
                     </div>
                     <div className="autorenew">
                         <p>Auto Renew?</p>
