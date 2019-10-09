@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 import axios from 'axios'
 import {connect} from 'react-redux'
 import {handleUser} from '../../../ducks/reducer'
+
 import swal from 'sweetalert2'
 
 class Register extends Component{
@@ -61,6 +62,7 @@ class Register extends Component{
                             <p>email:</p>
                             <input name='email' placeholder='Email' onChange={e => this.handleChange(e, 'email')} value={this.state.email} type="text"/>
                         </div>
+                        
                         <div className="password">
                             <p>password:</p>
                             <input name='password' placeholder='Password' onChange={e => this.handleChange(e, 'password')} value={this.state.password} type="password"/>

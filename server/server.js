@@ -45,6 +45,9 @@ app.get('/api/doc/:id', contractCtrl.getOneDocument)
 app.delete('/api/doc/:id', contractCtrl.deleteDoc)
 app.put('/api/doc/:id', contractCtrl.editDoc)
 
+//STRIPE ENDPOINTS
+app.post('/charge', contractCtrl.charge)
+
 
 //MASSIVE AND APP LISTENING
 

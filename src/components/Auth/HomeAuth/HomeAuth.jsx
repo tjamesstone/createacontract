@@ -3,10 +3,8 @@ import HomeHeader from '../../Header/HomeHeader/HomeHeader'
 import './HomeAuth.scss'
 import Register from '../Register/Register'
 import Login from '../Login/Login'
-import { Switch, Route } from 'react-router-dom'
-import { Elements, StripeProvider } from 'react-stripe-elements'
-import CheckoutForm from '../../../CheckoutForm'
 // import {connect} from 'react-redux'
+import {Switch, Route} from 'react-router-dom'
 // import {handleUser, clearState} from '../../../ducks/reducer'
 // import axios from 'axios'
 
@@ -34,14 +32,14 @@ class HomeAuth extends Component {
                 <HomeHeader />
 
                 <div className="logincontent">
-                    <StripeProvider apiKey="pk_test_H21FPRzyUnnPvwBceOQ84lnq00iyS0A5sp">
+                    {/* <StripeProvider apiKey="pk_test_H21FPRzyUnnPvwBceOQ84lnq00iyS0A5sp">
                         <div className="example">
                             <h1>React Stripe Elements Example</h1>
                             <Elements>
                                 <CheckoutForm />
                             </Elements>
                         </div>
-                    </StripeProvider>
+                    </StripeProvider> */}
                     <Switch>
                         <Route path='/homeauth/register' component={Register} />
                         <Route path='/homeauth/login' component={Login} />

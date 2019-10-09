@@ -1,3 +1,6 @@
+const stripe = require("stripe")("sk_test_FFifD8c4zMyr59GvISOEkoRu00Pg7AEj8C")
+
+
 module.exports = {
     addCompany: async (req, res) => {
         const db = req.app.get('db')
@@ -96,5 +99,21 @@ module.exports = {
       res.status(500).send(`Yo error ${err}`)
 
         })
+    },
+    charge: async (req, res) => {
+        try {
+            let {status} = await stripe.charges.create({
+              amount: 500,
+              currency: "usd",
+              description: "An example charge",
+              source: req.body.id
+            });
+        
+            res.json({status});
+          } catch (err) {
+            console.log(err);
+            res.status(500).end();
+          }
+        
     }
 }
