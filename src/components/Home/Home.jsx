@@ -41,7 +41,7 @@ export default class Home extends Component {
                             <h2>Get In Touch</h2>
                             <h3 className='subtitle'>Questions? Comments? Suggestions?</h3>
                             <i className="far fa-lightbulb"></i>
-                            <p>We're always looking to improve our product and help our customers. If you're looking for help with a specific part of our product, you're still in the right place. Let's talk!</p>
+                            <p>We're always looking to improve our product and help our customers. If you're looking for help with a specific part of our product, you're in the right place. Let's talk!</p>
                             <a href="mailto:hello@createacontract.com"><button  >Reach Us ></button></a>
                         </div>
                     </div>

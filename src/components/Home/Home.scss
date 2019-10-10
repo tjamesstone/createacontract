@@ -20,6 +20,21 @@ i{
     
     background: white;
 }
+.howitworks1{
+    button:hover{
+        text-decoration: underline;
+    }
+}
+.welcome1{
+    button:hover{
+        text-decoration: underline;
+    }
+}
+.learnmore1{
+    button:hover{
+        text-decoration: underline;
+    }
+}
 .welcome{
     background: $darkBlack;
     margin-bottom: 1rem;
@@ -73,7 +88,6 @@ button:hover {
 }
 .learnmore{
     background: $darkBlack;
-    margin-bottom: 1rem;
     color: $lightGreen;
     padding-left: 20%;
     padding-right: 20%;
