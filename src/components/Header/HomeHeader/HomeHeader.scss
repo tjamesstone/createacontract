@@ -37,6 +37,10 @@
     align-items: center;
     width: 4rem;
     margin: 1rem;
+    p{
+        padding-bottom: 4px;
+        padding-left: .5rem;
+    }
 }
 .new:hover{
     cursor: pointer;

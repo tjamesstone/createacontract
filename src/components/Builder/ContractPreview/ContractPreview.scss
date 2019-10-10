@@ -6,6 +6,8 @@
     align-content: center;
     flex-direction: column;
     background: #e4e4e4;
+    font-family: 'Days One', sans-serif;
+
     
 }
 
@@ -237,6 +239,13 @@
 .contractlol{
     width: 12rem;
     margin: 1rem auto;
+}
+.contractname{
+    p{
+        font-size: 80px;
+        font-weight: bold;
+        margin: 1rem;
+    }
 }
 .thedate{
     display: flex;

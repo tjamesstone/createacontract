@@ -38,6 +38,7 @@ app.post('/api/client/new/', contractCtrl.addClient)
 app.post('/api/features/new/', contractCtrl.addFeatures)
 app.post('/api/terms/new/', contractCtrl.addTerms)
 app.post('/api/contracts/new', contractCtrl.addContract)
+app.get('/api/company/get', contractCtrl.getCompanyInfo)
 
 //DOCUMENTS ENDPOINTS
 app.get('/api/documents', contractCtrl.getDocuments)

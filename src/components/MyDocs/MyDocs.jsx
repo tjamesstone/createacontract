@@ -38,19 +38,19 @@ class MyDocs extends Component{
                 <HomeHeader/>
                 <div className="mydocsactual">
                     <div className="therealdocs">
-                        <div className="newdoc">
-                            <p>New:</p>
-                            <Link to='/builder/companyinfo'>
-                            <div className="newdoccontainer">
-                                <img src={blackPlus} alt=""/>
-                            </div>
-                            </Link>
-                        </div>
+                        
                         <div className="listofdocs">
                             <div className="listofdocstitle">
                                 <p>My Docs:</p>
                             </div>
                             <div className="listofdocsactual">
+                            <Link to='/builder/companyinfo'>
+                            <div className="newdoccontainer">
+                            <p className='individualcontracttitle'
+                                        >New</p>
+                                <img src={blackPlus} alt=""/>
+                            </div>
+                            </Link>
                                 {docs.map(doc => (
                                     <Link key = {doc.id} to={`/doc/${doc.id}`}> 
                                     <div className="individualdoc">

@@ -1,2 +1,2 @@
-SELECT * FROM company_info
-WHERE user_id = $1;
+SELECT * FROM company_info;
+-- WHERE user_id = $1;

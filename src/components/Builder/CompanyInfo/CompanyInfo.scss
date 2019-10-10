@@ -1,4 +1,5 @@
 @import '../../../App.scss';
+@import url('https://fonts.googleapis.com/css?family=Days+One&display=swap');
 
 .companyinfo{
     display: flex;
@@ -18,9 +19,42 @@
     color: $lightGreen;
     padding: 1rem;
     margin: 1rem;
+    font-family: 'Montserrat', sans-serif;
+
+}
+.thecompanies{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 20vw;
+}
+.previouscompanies{
+    color: $lightGreen;
+    background: black;
+    border-radius: 10px;
+    box-shadow: 1px 1px 15px 1px #888888;
+    margin: .5rem .25rem auto;
+    padding: .25rem .5rem .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p{
+        display: flex;
+        align-items: center;
+    }
+}
+.previouscompanies:hover{
+    background: $onHover;
+    cursor: pointer;
 }
 .whotitle{
     margin: 0 auto;
+}
+.priorcompanies{
+    font-family: 'Days One', sans-serif;
 }
 .nextbutton{
     color: $lightGreen;
@@ -47,5 +81,8 @@
     .nextbutton{
         font-size: 10px;
 
+    }
+    .thecompanies{
+        width: 80%;
     }
 }

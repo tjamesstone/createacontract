@@ -3,7 +3,7 @@ import React, {Component} from 'react'
 import './CompanyInfo.scss'
 import {connect} from 'react-redux'
 import {handleCompanyInfo} from '../../../ducks/companyReducer'
-// import axios from 'axios'
+import axios from 'axios'
 
 class CompanyInfo extends Component{
     constructor(props){
@@ -15,14 +15,43 @@ class CompanyInfo extends Component{
             address: '',
             city: '',
             state: '',
-            zipcode: null
+            zipcode: null,
+            userCompanies: true,
+            companies: []
         }
     }
     
+    componentDidMount(){
+        this.getDocuments()
+    }
 
     handleChange = (e, key) => {
         this.setState({
             [key] : e.target.value
+        })
+        // console.log(this.state)
+    }
+
+    getDocuments = async () => {
+        const res = await axios.get(`/api/company/get/?usercompanies=${this.state.userCompanies}`)
+        
+        this.setState({
+            companies: res.data
+        })
+        // console.log(this.state.companies)
+    }
+
+    populateCompanyInfo = (i) => {
+        // console.log('test')
+        const {legal_name, terms_of_service, logo, address, city, state, zipcode} = this.state.companies[i]
+        this.setState({
+            legal_name,
+            terms_of_service,
+            logo,
+            address,
+            city,
+            state,
+            zipcode,
         })
         // console.log(this.state)
     }
@@ -44,13 +73,32 @@ class CompanyInfo extends Component{
     }
 
     render(){
+        const {companies} = this.state
+
         return(
             <div className="companyinfo">
+                <div className="priorcompanies">
+                    {this.state.companies.length !== 0
+                    ? 
+                    <div>
+                    <h2>Would you like to use a previous company profile?</h2> 
+                    <h5>Select which company profile you'd like to use, or enter a new one below</h5>
+                        <div className="thecompanies">
+                            {companies.map( (company, i) => (<div key={company.id} onClick={() => this.populateCompanyInfo(i)} className='previouscompanies'><p>{company.legal_name}</p></div>))}
+                        </div>
+                    </div>
+                    :
+                    <div>
+                        
+                    </div>
+                    }
+                </div>
+                
                 <div className="whoareyouform">
                     <h2 className='whotitle'
                     >Who Are You?</h2>
                     <div className="legalname">
-                        <p>Legal Name of Company:</p>
+                        <p>Legal Name of Your Company:</p>
                         <input name='legal_name' placeholder='Legal Name' onChange={e => this.handleChange(e, 'legal_name')} value={this.state.legal_name} type="text"/>
                     </div>
                     <div className="termsofservice">

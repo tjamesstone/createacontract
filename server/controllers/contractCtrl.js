@@ -74,7 +74,18 @@ module.exports = {
         })
     },
     getCompanyInfo: (req, res) => {
-
+        const db = req.app.get('db')
+        const {userid} = req.session
+        db.get_company_info()
+        .then( result => {
+            const filteredResult = result.filter(el => el.user_id === +userid)
+            res.status(200).send(filteredResult)
+           
+        })
+        .catch(err => {
+            console.log(`Problem with getting all documents: ${err}`)
+            res.status(500).send(`Problem with getting all docuemnts: ${err}`)
+        })
     },
     deleteDoc: (req, res) => {
         const db = req.app.get('db')
