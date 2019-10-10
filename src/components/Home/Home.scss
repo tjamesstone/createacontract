@@ -1,8 +1,11 @@
 @import '../../App.scss';
+@import url('https://fonts.googleapis.com/css?family=Dosis&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Prompt&display=swap');
 
 
 .home{
     background: $darkGreen;
+    font-family: 'Prompt', sans-serif;
 }
 .welcomeicon{
     width: 30px;

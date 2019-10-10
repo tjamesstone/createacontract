@@ -130,13 +130,9 @@ class ContractPreview extends Component {
                         <div className="theactualterm">
                             <h4>Term:</h4>
                             <div className="theactualtermtext">
-
-
-                                <p
-                                    className='termstext'
-                                > {this.props.terms.contract_length} months. </p> {this.props.terms.autorenew === 'yes' ? <p className='termstext'
-                                > This License Agreement will automatically renew every {this.props.terms.contract_length} months unless written notice of cancellation is
-received at least 60 days prior to the end of the current term.</p> : <p className='termstext' >At the end of this initial term of {this.props.terms.contract_length} months, this contract will not auto-renew.</p>}
+                            {this.props.terms.autorenew === 'yes' ? <p className='termstext'
+                                > {this.props.terms.contract_length} months. This License Agreement will automatically renew every {this.props.terms.contract_length} months unless written notice of cancellation is
+received at least 60 days prior to the end of the current term.</p> : <p className='termstext' >{this.props.terms.contract_length} months. At the end of this initial term of {this.props.terms.contract_length} months, this contract will not auto-renew.</p>}
 
                             </div>
                         </div>
@@ -171,9 +167,23 @@ unless otherwise specified by {this.props.company.legal_name}. Additionally all 
 
                     </div>
                     <div className="signature">
-                        <h2>Client Authorization</h2>
-                        <p className='termstext' >By signing this contract, I hereby represent and warrant that I am duly authorized to execute this binding contract on behalf of the {this.props.client.client_name} named above, and I, {this.props.client.signatory} accept, on behalf of the client, all terms regardless of employment status, or usage of the platform. By accepting this agreement, I give Grow permission to charge the client with the payment method provided according to the payment terms.</p>
-                        <div className="signatory">
+                    <h2>Client Authorization</h2>
+                        {
+                            this.props.terms.collections_protection === 'none' 
+                            ?
+                            <p className='termstext none' >By signing this contract, I, {this.props.client.signatory}, hereby represent and warrant that I am duly authorized to execute this binding contract on behalf of the {this.props.client.client_name} named above, and I, {this.props.client.signatory} accept, on behalf of the client, all terms regardless of employment status, or usage of the service provided. By accepting this agreement, I give Grow permission to charge the client with the payment method provided according to the payment terms.</p>
+                            : 
+                            this.props.terms.collections_protection === 'basic'
+                            ?
+                            <p className='termstext basic' >By signing this contract, I {this.props.client.signatory}, hereby represent and warrant that I am duly authorized to execute this binding contract on behalf of the {this.props.client.client_name} named above, and I, {this.props.client.signatory} accept, on behalf of the client, all terms regardless of employment status, or usage of the service provided.  Additionally we acknowledge that {this.props.company.legal_name} reserves the right to send any outstanding balance to their collection agency. All fees charged by the collection firm will be charged directly to the client, {this.props.client.client_name}, in addition to the outstanding balance. By accepting this agreement, I give Grow permission to charge the client with the payment method provided according to the payment terms. </p>
+                            :
+                            this.props.terms.collections_protection === 'full'
+                            ?
+                            <p className='termstext full' >By signing this contract, I {this.props.client.signatory}, hereby represent and warrant that I am duly authorized to execute this binding contract on behalf of the {this.props.client.client_name} named above, and I, {this.props.client.signatory} accept, on behalf of the client, all terms regardless of employment status, or usage of the service provided. Additionally I accept that in the event of a failure to pay by {this.props.client.client_name} I agree to be a personal guarentor of the entire value of this contract and will remit payment for any outstanding balance. Additionally we acknowledge that {this.props.company.legal_name} reserves the right to send any outstanding balance to their collection agency. All fees charged by the collection firm will be charged directly to the client or personal guarantor in addition to the outstanding balance.By accepting this agreement, I give Grow permission to charge the client with the payment method provided according to the payment terms. </p>
+                            :
+                            <p></p>
+                        }
+                         <div className="signatory">
 
                             <div className="thedate">
                                 <h6 className="thesignatory" >{this.props.client.signatory}</h6>
@@ -372,13 +382,9 @@ unless otherwise specified by {this.props.company.legal_name}. Additionally all 
                         <div className="theactualterm">
                             <h4>Term:</h4>
                             <div className="theactualtermtext">
-
-
-                                <p
-                                    className='termstext'
-                                > {this.props.terms.contract_length} months. </p> {this.props.terms.autorenew === 'yes' ? <p className='termstext'
-                                > This License Agreement will automatically renew every {this.props.terms.contract_length} months unless written notice of cancellation is
-received at least 60 days prior to the end of the current term.</p> : <p className='termstext' >At the end of this initial term of {this.props.terms.contract_length} months, this contract will not auto-renew.</p>}
+                                 {this.props.terms.autorenew === 'yes' ? <p className='termstext'
+                                > {this.props.terms.contract_length} months. This License Agreement will automatically renew every {this.props.terms.contract_length} months unless written notice of cancellation is
+received at least 60 days prior to the end of the current term.</p> : <p className='termstext' >{this.props.terms.contract_length} months. At the end of this initial term of {this.props.terms.contract_length} months, this contract will not auto-renew.</p>}
 
                             </div>
                         </div>

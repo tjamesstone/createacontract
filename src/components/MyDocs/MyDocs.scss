@@ -1,5 +1,5 @@
 @import '../../App.scss';
-
+@import url('https://fonts.googleapis.com/css?family=Cuprum&display=swap');
 
 
 .mydocscomponent{
@@ -9,6 +9,8 @@
 .mydocsactual{
     display: flex;
     justify-content: center;
+    background: #e4e4e4;
+
 }
 .therealdocs{
     display: flex;
@@ -43,6 +45,7 @@
 .listofdocsactual{
     display: flex;
     flex-direction: row;
+    font-family: 'Cuprum', sans-serif;
 }
 .listofdocs{
     display: flex;

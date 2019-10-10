@@ -73,6 +73,9 @@ module.exports = {
             res.status(500).send(`Problem with getting one docuemnt: ${err}`)
         })
     },
+    getCompanyInfo: (req, res) => {
+
+    },
     deleteDoc: (req, res) => {
         const db = req.app.get('db')
         const {id} = req.params

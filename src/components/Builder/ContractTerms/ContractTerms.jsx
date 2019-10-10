@@ -75,19 +75,7 @@ class ContractTerms extends Component{
                             <option value="none">None</option>
                         </select>
                     </div>
-                    <div className="chargeback">
-                        <p>Chargeback Protection</p>
-                        <select name="chargeback_protection" id="" onChange={e => this.handleChange(e, 'chargeback_protection')} value={this.state.chargeback_protection}>
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
-                        </select> 
-                        
-                    </div>
-                    {/* <div className="other">
-                        <p>Other:</p>
-                        <p>This would be any other term you would like to include</p>
-                        <textarea name="" id="" cols="30" rows="10"></textarea>
-                    </div> */}
+                    
                 </div>
                 <div className="thebuttons">
                     <Link to='/builder/features'><button className='nextbutton' >Back to Features</button></Link>
