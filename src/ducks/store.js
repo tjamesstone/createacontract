@@ -6,13 +6,15 @@ import companyReducer from './companyReducer'
 import clientReducer from './clientReducer'
 import featuresReducer from './featuresReducer'
 import termsReducer from './termsReducer'
+import paymentReducer from './paymentReducer'
 
 const rootReducer = combineReducers({
     user: userReducer,
     company: companyReducer,
     client: clientReducer,
     features: featuresReducer,
-    terms: termsReducer
+    terms: termsReducer,
+    payment: paymentReducer
 })
 
 // console.log(companyReducer)

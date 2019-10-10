@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {CardElement, injectStripe} from 'react-stripe-elements';
 import axios from 'axios';
+import {connect} from 'react-redux'
+import {handlePayment} from './ducks/paymentReducer'
 
 class CheckoutForm extends Component {
   constructor(props) {
@@ -20,14 +22,19 @@ class CheckoutForm extends Component {
     this.setState({
         complete: true
     })
+    console.log(this.state.complete)
+    this.props.handlePayment(this.state.complete)
+
+
+
 }
 
   render() {
-    if (this.state.complete) return <h1>Purchase Complete</h1>;
+    if (this.state.complete) return <div className="paymentsuccessful whoareyouform"><h2>Your Payment Processed Successfully</h2> <img src="https://securionpay.com/wp-content/uploads/2016/10/icn-completed-mobile.svg" alt="payment complete"/> <h4>Now Scroll Down and Click 'Save Contract' to Save it to Your Documents</h4></div>;
 
     return (
       <div className="checkout">
-        <h3>Want to save this contract? Purchase for $5</h3>
+        <h3> Your total comes to $5</h3>
         <CardElement />
         <button className="loginbutton contractlol" onClick={this.submit}>Purchase</button>
         <img src="https://apolloartistry.com/wp-content/uploads/2017/03/powered-by-stripe.png" alt="powered by stripe"/>
@@ -36,4 +43,5 @@ class CheckoutForm extends Component {
   }
 }
 
-export default injectStripe(CheckoutForm);
+// export default injectStripe(CheckoutForm)
+export default connect(null, {handlePayment}) (injectStripe(CheckoutForm))

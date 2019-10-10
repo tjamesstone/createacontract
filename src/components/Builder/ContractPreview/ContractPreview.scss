@@ -238,7 +238,7 @@
     margin: 20px auto;
 }
 .contractlol{
-    width: 10rem;
+    width: 12rem;
     margin: 1rem auto;
 }
 .thedate{
@@ -253,10 +253,52 @@
 //     opacity: .2;
 // }
 
+.paymentsuccessful{
+    img{
+        width: 4rem;
+    }
+    display: block;
+    background: $lightBlack;
+
+    position: absolute;
+    bottom: 20vh;
+    left: 29vw;
+    animation-name: goaway;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+
+.paymentsuccessful:hover{
+opacity: 1;
+animation: notexistent;
+}
+
+
 
 
 @media screen and (max-width: 500px) {
-
+    .checkout{
+        width: 80%;
+       left: 3vw;
+       margin: 0 auto;
+    }
+    .paymentsuccessful{
+        margin: 0 auto;
+        left: 13vw;
+        
+    }
+    .paymentsuccessful:hover{
+        opacity: 1;
+        animation-name: goaway;
+        animation-duration: 2s;
+        animation-delay: 2s;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in;
+        animation-fill-mode: forwards;
+        }
   .actualcontract{
       zoom: .45;
   }
@@ -288,4 +330,13 @@
     margin: 0 auto;
 
   }
+}
+@keyframes goaway{
+    0%{
+    opacity: 1;
+    }
+
+    100%{
+    opacity: 0;
+    }
 }

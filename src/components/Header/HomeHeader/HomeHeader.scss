@@ -134,31 +134,36 @@ a {
     .loginbutton{
         font-size: 10px;
         width: 3rem;
+        margin: 0 auto;
+        margin-right: .5rem;
     }
     .new{
         margin: 0 auto;
-        font-size: 10px;
-        width: 2rem;
+        font-size: 8px;
+        width: 1rem;
         display: flex;
         align-items: center;
         img{
-            width: 10px;
+            width: 8px;
             margin: 0 auto;
+            padding-top: 5px;
         }
     }
     .mydocs{
-        margin: .4rem ;
-        font-size: 10px;
-        width: 2rem;
+        font-size: 8px;
+        width: 1rem;
         display: flex;
         align-items: center;
+        // margin-right: .5rem;
         img{
-            width: 10px;
+            width: 8px;
             margin: 0 auto;
         }
     }
     .welcomeheader{
-        font-size: 8px;
+        font-size: 6px;
+        margin-right: .5rem;
+        
     }
     .login{
         margin: 0 auto;

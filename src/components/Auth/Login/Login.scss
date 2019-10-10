@@ -13,6 +13,7 @@ h3{
     flex-direction: column;
     align-items: center;
     margin: 2rem;
+    background: #e4e4e4;
 }
 .firstline{
 font-size: 13px;
@@ -79,5 +80,8 @@ input{
 @media screen and (max-width: 500px) {
     .loginform{
         width: 95%
+    }
+    .email{
+        padding-right: 1rem;
     }
 }
