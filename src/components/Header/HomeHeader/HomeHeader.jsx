@@ -7,6 +7,7 @@ import {Link} from 'react-router-dom'
 import axios from 'axios'
 import {connect} from 'react-redux'
 import {handleUser, clearState} from '../../../ducks/reducer'
+import {withRouter} from 'react-router-dom'
 
 class HomeHeader extends Component{
     constructor(props){
@@ -18,14 +19,22 @@ class HomeHeader extends Component{
 
     componentDidMount = () => {
         axios.get('/api/auth/me').then( res => {
-            if(!res.data){
-
+            if(!res.data[0].email){
+                
             } else {
     
                 this.getUserById()
                 // console.log(res.data[0])
             }
         })
+        .catch( err => {
+            // console.log(this.props)
+            // console.log(this.props.history)
+            if(this.props.location.pathname !== '/homeauth/login' && this.props.location.pathname !== '/homeauth/register'){
+            this.props.history.push('/')}
+        })
+        
+
         
     }
 
@@ -159,4 +168,4 @@ const mapStateToProps = reduxState => {
     return reduxState
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomeHeader)
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(HomeHeader))

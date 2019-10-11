@@ -53,6 +53,7 @@ class ContractPreview extends Component {
         const { title, description, price } = this.props.features
         const { effective_date, contract_length, autorenew, payment_frequency, collections_protection, chargeback_protection } = this.props.terms
         // console.log(legal_name)
+        
         const companyRes = await axios.post('/api/company/new', { legal_name, terms_of_service, logo, address, city, state, zipcode })
         const clientRes = await axios.post('/api/client/new', { client_name, signatory })
         const featuresRes = await axios.post('/api/features/new', { title, description, price })

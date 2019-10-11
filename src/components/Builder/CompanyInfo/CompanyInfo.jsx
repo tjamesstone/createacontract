@@ -34,10 +34,21 @@ class CompanyInfo extends Component{
 
     getDocuments = async () => {
         const res = await axios.get(`/api/company/get/?usercompanies=${this.state.userCompanies}`)
-        
+        // console.log(res.data)
+        // const filteredCompanies = []
+        // let sorted = res.data.sort()
+        //     for(let i =0; i < res.data.length; i++){
+        //         console.log(res.data[i+1].id)
+        //         if(res.data[i] !== res.data[i + 1]){
+        //             filteredCompanies.push(sorted[i])
+        //         }
+        //     }
+        //     console.log(filteredCompanies)
+
         this.setState({
             companies: res.data
         })
+
         // console.log(this.state.companies)
     }
 
@@ -74,6 +85,7 @@ class CompanyInfo extends Component{
 
     render(){
         const {companies} = this.state
+        
 
         return(
             <div className="companyinfo">
@@ -84,6 +96,7 @@ class CompanyInfo extends Component{
                     <h2>Would you like to use a previous company profile?</h2> 
                     <h5>Select which company profile you'd like to use, or enter a new one below</h5>
                         <div className="thecompanies">
+                            
                             {companies.map( (company, i) => (<div key={company.id} onClick={() => this.populateCompanyInfo(i)} className='previouscompanies'><p>{company.legal_name}</p></div>))}
                         </div>
                     </div>
