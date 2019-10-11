@@ -135,7 +135,7 @@ a {
     }
     .headerbuttons{
         margin-right: 0rem;
-        
+        max-width: 175px;
     }
     .loginbutton{
         font-size: 10px;
@@ -145,15 +145,20 @@ a {
     }
     .new{
         margin: 0 auto;
+        margin-left: 1rem;
         font-size: 8px;
-        width: 1rem;
         display: flex;
         align-items: center;
+       width: 1.4rem;
         img{
             width: 8px;
             margin: 0 auto;
-            padding-top: 5px;
         }
+        p{
+            margin: 0 auto;
+            padding-top: 3px;
+        }
+        
     }
     .mydocs{
         font-size: 8px;
@@ -164,6 +169,10 @@ a {
         img{
             width: 8px;
             margin: 0 auto;
+        }
+        p{
+            margin: 0 auto;
+
         }
     }
     .welcomeheader{
