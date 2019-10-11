@@ -47,7 +47,7 @@ class TheContract extends Component{
         const input = document.getElementById('whattosave')
         // const input = this.contractRef.current.outerHTML
         // console.log(input)
-        html2canvas(input, { y: 134, scale: 2})
+        html2canvas(input, { y: 136, scale: 2 })
         // html2canvas(input)
         .then((canvas) => {
             // console.log(canvas)
