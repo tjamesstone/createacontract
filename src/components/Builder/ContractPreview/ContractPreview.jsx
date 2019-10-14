@@ -11,7 +11,7 @@ class ContractPreview extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            contract_name: '',
+            contract_name: `${this.props.company.legal_name} - ${this.props.client.client_name} Contract`,
             clickedSave: false,
             didTheyPay: this.props.payment.complete
         }
