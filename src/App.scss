@@ -10,6 +10,45 @@ $lightWhite: #FAFAFA;
 $middleBlack: #202020;
 $blue: #66BBFF;
 
+@mixin scrollbar {
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 2px;
+  }
+  ::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: $lightGreen;
+    border-radius: 50px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: $lightGreen;
+  }
+  ::-webkit-scrollbar-thumb:active {
+    background: transparent;
+
+  }
+  ::-webkit-scrollbar-track {
+    background: $darkBlack;
+    border: 0px transparent solid;
+  }
+  ::-webkit-scrollbar-track:hover {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-track:active {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+  }
+
+html{
+  @include scrollbar()
+}
+
 .App {
   text-align: center;
   background: #e4e4e4;
@@ -18,12 +57,8 @@ $blue: #66BBFF;
 
 button:focus {outline:0; }
 
-::-webkit-scrollbar-track-piece{
-  background: $lightGreen;
-  background-color: $lightGreen ;
-  color: $lightGreen;
-  border: 1px $lightGreen solid;
-}
+
+
 
 
 
