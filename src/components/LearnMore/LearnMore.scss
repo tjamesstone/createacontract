@@ -1,0 +1,42 @@
+@import '../../App.scss';
+
+.learnmorecomponent{
+    background: $mainGrey;
+    font-family: 'Prompt', sans-serif;
+    background: $mainGrey;
+    height: 190vh;
+}
+.thetexthaha{
+    display: flex;
+    flex-direction: column;
+    background: $mainGrey;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.learnmorecontent{
+    background: $mainGrey;
+    width: 70%;
+    margin: 0 auto;
+    h1{
+        font-size: 60px;
+        color: black;
+    }
+    i{
+        color: $lightGreen;
+        margin-bottom: 2rem;
+    }
+    
+}
+.thelastlineline{
+    margin: 0 auto;
+}
+.lastline{
+    display: flex;
+    margin: 0 auto;
+}
+.thespace{
+    color: $mainGrey;
+}
+.thelastlinelink:hover{
+    text-decoration: underline;
+}

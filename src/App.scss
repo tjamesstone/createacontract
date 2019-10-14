@@ -18,6 +18,15 @@ $blue: #66BBFF;
 
 button:focus {outline:0; }
 
+::-webkit-scrollbar-track-piece{
+  background: $lightGreen;
+  background-color: $lightGreen ;
+  color: $lightGreen;
+  border: 1px $lightGreen solid;
+}
+
+
+
 input{
   background: $mainGrey;
   border: 2px $lightGreen solid;

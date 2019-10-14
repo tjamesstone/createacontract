@@ -30,7 +30,7 @@ class HomeHeader extends Component{
         .catch( err => {
             // console.log(this.props)
             // console.log(this.props.history)
-            if(this.props.location.pathname !== '/homeauth/login' && this.props.location.pathname !== '/homeauth/register'){
+            if(this.props.location.pathname !== '/homeauth/login' && this.props.location.pathname !== '/homeauth/register' && this.props.location.pathname !== '/learnmore'){
             this.props.history.push('/')}
         })
         

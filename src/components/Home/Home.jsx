@@ -33,7 +33,7 @@ export default class Home extends Component {
                             <h3 className='subtitle'>You tell us what you want, and we'll build it.</h3>
                             <i className="fas fa-cogs"></i>
                             <p>We'll have you fill out a series of forms that provide us with the data we need to build a solid, legally-binding contract. And don't worry, all your data is encrypted.</p>
-                            <button>Learn More ></button>
+                            <Link to="/learnmore"><button>Learn More ></button></Link>
                         </div>
                     </div>
                     <div className="learnmore">
