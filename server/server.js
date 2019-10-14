@@ -14,6 +14,7 @@ const app = express()
 
 
 //MIDDLEWARE
+app.use( express.static(`${__dirname}/../build`))
 app.use(express.json())
 app.use(session({
     resave: false,
