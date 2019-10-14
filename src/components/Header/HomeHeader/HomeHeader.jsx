@@ -140,9 +140,9 @@ class HomeHeader extends Component{
                         </div>
                         </Link> */}
                        
-                        <div className="login">
+                        <div className="login loginhaha">
                             <Link to='/homeauth/login'>
-                            <button className="loginbutton"
+                            <button className="loginbutton loginregisterhaha"
                             >login / register</button>
                             </Link>
                         </div>

@@ -71,7 +71,7 @@
 }
 .listofdocstitle{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     padding-left: 1rem;
 
 }
@@ -117,6 +117,9 @@
     .newdoccontainer{
         width: 67.5px;
         height: 90px;
+        img{
+            width: 1.6rem;
+        }
     }
     .individualdoc{
         width: 67.5px;
