@@ -3,6 +3,7 @@ import {CardElement, injectStripe} from 'react-stripe-elements';
 import axios from 'axios';
 import {connect} from 'react-redux'
 import {handlePayment} from './ducks/paymentReducer'
+import swal from 'sweetalert2'
 
 class CheckoutForm extends Component {
   constructor(props) {
@@ -12,18 +13,23 @@ class CheckoutForm extends Component {
   }
 
   async submit(ev) {
-    let {token} = await this.props.stripe.createToken({name: "Name"});
+    try {
+      let {token} = await this.props.stripe.createToken({name: "Name"});
     // console.log(token)
     let response = await axios.post("/charge", {
       id: token.id
     });
-  
+    
     if (response.statusText === 'OK') console.log("Purchase Complete!")  
     this.setState({
         complete: true
     })
     console.log(this.state.complete)
     this.props.handlePayment(this.state.complete)
+    } catch (error) {
+      swal.fire({type: 'error', title: 'Oops...', text:`Payment failed, poor boy. Double check your card details or use your parent's card.`})
+    }
+    
 
 
 
