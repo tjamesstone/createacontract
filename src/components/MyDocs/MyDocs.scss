@@ -50,6 +50,8 @@
 }
 .newdoccontainer:hover{
     cursor: pointer;
+    transform: scale(1.1);
+
 }
 .listofdocsactual{
     display: flex;
@@ -89,6 +91,7 @@
     .clicktoviewdetails{
         color: $blue;
     }
+    transform: scale(1.1);
 }
 .individualcontracttitle{
     color: black;
