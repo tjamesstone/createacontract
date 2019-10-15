@@ -54,7 +54,7 @@ class TheContract extends Component{
             const imgData = canvas.toDataURL('image/svg')
             const pdf = new jsPDF()
             
-            pdf.addImage(imgData, 'JPEG', 0, 0, 210, 298)
+            pdf.addImage(imgData, 'JPEG', -2, 0, 210, 298)
             // console.log(pdf)
             pdf.save('contract.pdf')
         })
