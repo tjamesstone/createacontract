@@ -6,9 +6,6 @@ import html2canvas from 'html2canvas'
 import jsPDF from 'jspdf'
 import {Link} from 'react-router-dom'
 
- 
-
-
 class TheContract extends Component{
     constructor(props){
         super(props)
@@ -63,11 +60,8 @@ class TheContract extends Component{
         })
     }
   
-    
-
     getOneDocument = async () => {
         const res = await axios.get(`/api/doc/${this.props.match.params.id}`)
-        // console.log(res)
         this.setState({
             address: res.data[0].address,
             autorenew: res.data[0].autorenew,
@@ -92,14 +86,11 @@ class TheContract extends Component{
             zipcode: res.data[0].zipcode
         })
     }
-
     
     render() {
-       
         return(
             <div className="parent">
-            <div id='whattosave' className="actualcontract" ref={this.contractRef}
-      >
+            <div id='whattosave' className="actualcontract" ref={this.contractRef}>
                     <header>
                         <div className="logoandaddress">
                             <img className='thelogoimage' src={this.state.logo} alt="logo" />
@@ -108,7 +99,6 @@ class TheContract extends Component{
                                 >{this.state.legal_name}</p>
                                 <p>{this.state.address}</p>
                                 <p>{this.state.city}, {this.state.state}, {this.state.zipcode}</p>
-                              
                             </div>
                         </div>
                         <div className="officialcontract">
@@ -116,7 +106,6 @@ class TheContract extends Component{
                         </div>
                         <div className='preparedon' >
                             <p>Prepared for {this.state.signatory}</p>
-
                         </div>
                     </header>
                     <div className="fineprint">
@@ -147,18 +136,12 @@ class TheContract extends Component{
                                  {this.state.autorenew === 'yes' ? <p className='termstext'
                                 > {this.state.contract_length} months. This License Agreement will automatically renew every {this.state.contract_length} months unless written notice of cancellation is
 received at least 60 days prior to the end of the current term.</p> : <p className='termstext' >{this.state.contract_length} months. At the end of this initial term of {this.state.contract_length} months, this contract will not auto-renew.</p>}
-
                             </div>
                         </div>
-
                         <div className="thepaymentterms">
                             <h4>Payment Terms: </h4>
                             <p className='termstext'>Fees are due and payable at the time of acceptance of this agreement. All fees including, recurring {this.state.payment_frequency} charges, professional service fees, etc. are due upon receipt,
 unless otherwise specified by {this.state.legal_name}. Additionally all fees will be payed {this.state.payment_frequency} by {this.state.client_name}.</p>
-                            {/* {this.state.collections_protection !== 'none' ? this.state.collections_protection !== 'basic' : <div> </div> : <h4> {this.state.company_name} reserves the right to send any outstanding balance to their collection agency. All fees charged by the collection firm will be charged directly to the client in addition to the outstanding balance.</h4> :  {this.state.company_name} reserves the right to send any outstanding balance to their collection agency. All fees charged by the collection firm will be charged directly to the client in addition to the outstanding balance. Additionally the signatory of this contract {this.state.signatory} agrees to be a personal guarantor of any outstanding balances in relation to this agreement, including in any case where payment was not recieved by {this.state.client_name}}
-                             */}
-
-                            {/* {0 === 1 ? 0 === 0 : <div>asdf</div> ? 0 === 2 ? <div>qwerty</div> : <div>doodoo</div> : <div>tate</div>} */}
                         </div>
                         <div className='taxcompliance' >
                             <h4>Tax Compliance: </h4>
@@ -168,17 +151,14 @@ unless otherwise specified by {this.state.legal_name}. Additionally all fees wil
                             <h4>Cancellation Policy: </h4>
                             {this.state.autorenew === 'yes' ?
                                 <div className="cancellationone">
-
                                     <p className='termstext'> After confirmed receipt of the cancellation request, the contract is valid for until the end of the current term and all charges within that time frame are still valid. As previously stated, this license agreement will automatically renew at the end of each current term unless written notice of cancellation is received at least 60 days prior to the end of the current term. </p>
                                 </div>
-
                                 :
                                 <div className="cancellationtwo">
                                     <p className='termstext'> After confirmed receipt of the cancellation request, the contract is valid for until the end of the current term and all charges within that time frame are still valid.</p>
                                 </div>
                             }
                         </div>
-
                     </div>
                     <div className="signature">
                         <h2>Client Authorization</h2>
@@ -198,7 +178,6 @@ unless otherwise specified by {this.state.legal_name}. Additionally all fees wil
                             <p></p>
                         }
                         <div className="signatory">
-
                             <div className="thedate">
                                 <h6 className="thesignatory" >{this.state.signatory}</h6>
                                 <p className="termstext" >x________________________________ Date: _______________</p>
@@ -207,10 +186,10 @@ unless otherwise specified by {this.state.legal_name}. Additionally all fees wil
                         </div>
                     </div>
                 </div>
-                <div className="contractbuttons">
-                <Link to='/mydocs'> <button className='backtodocs' >Back to My Docs</button></Link>
-                <button className='backtodocs' onClick={() => this.pdfDocument()} >Save as PDF</button>
-                </div>
+                    <div className="contractbuttons">
+                        <Link to='/mydocs'> <button className='backtodocs' >Back to My Docs</button></Link>
+                        <button className='backtodocs' onClick={() => this.pdfDocument()} >Save as PDF</button>
+                    </div>
                 </div>
         )
     }
