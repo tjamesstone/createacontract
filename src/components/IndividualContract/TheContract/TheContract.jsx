@@ -36,6 +36,7 @@ class TheContract extends Component{
         this.contractRef = React.createRef()
         this.pdfDocument = this.pdfDocument.bind(this)
     }
+
     componentDidMount() {
         this.getOneDocument()
     }
@@ -149,7 +150,9 @@ unless otherwise specified by {this.state.legal_name}. Additionally all fees wil
                         </div>
                         <div className="thecancellationpolicy">
                             <h4>Cancellation Policy: </h4>
-                            {this.state.autorenew === 'yes' ?
+                            {
+                                this.state.autorenew === 'yes' 
+                                ?
                                 <div className="cancellationone">
                                     <p className='termstext'> After confirmed receipt of the cancellation request, the contract is valid for until the end of the current term and all charges within that time frame are still valid. As previously stated, this license agreement will automatically renew at the end of each current term unless written notice of cancellation is received at least 60 days prior to the end of the current term. </p>
                                 </div>
