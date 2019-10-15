@@ -7,6 +7,7 @@ const session = require('express-session')
 const contractCtrl = require('./controllers/contractCtrl.js')
 const authCtrl = require('./controllers/authCtrl')
 const stripe = require("stripe")("sk_test_FFifD8c4zMyr59GvISOEkoRu00Pg7AEj8C")
+const path = require('path');
 
 const app = express()
 
@@ -49,6 +50,10 @@ app.put('/api/doc/:id', contractCtrl.editDoc)
 
 //STRIPE ENDPOINTS
 app.post('/charge', contractCtrl.charge)
+
+app.get('*', (req, res)=>{
+    res.sendFile(path.join(__dirname, '../build/index.html'));
+});
 
 
 //MASSIVE AND APP LISTENING
