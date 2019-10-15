@@ -134,8 +134,8 @@ class TheContract extends Component{
                         <div className="theactualterm">
                             <h4>Term:</h4>
                             <div className="theactualtermtext">
-                                 {this.state.autorenew === 'yes' ? <p className='termstext'
-                                > {this.state.contract_length} months. This License Agreement will automatically renew every {this.state.contract_length} months unless written notice of cancellation is
+                                 {this.state.autorenew === 'yes' ? <p className='termstext'> 
+                                 {this.state.contract_length} months. This License Agreement will automatically renew every {this.state.contract_length} months unless written notice of cancellation is
 received at least 60 days prior to the end of the current term.</p> : <p className='termstext' >{this.state.contract_length} months. At the end of this initial term of {this.state.contract_length} months, this contract will not auto-renew.</p>}
                             </div>
                         </div>
