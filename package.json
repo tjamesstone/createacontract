@@ -10,7 +10,7 @@
     "express": "^4.17.1",
     "express-session": "^1.16.2",
     "file-saver": "^2.0.2",
-    "html-pdf": "^2.2.0",
+    "html-pdf": "^3.0.1",
     "html2canvas": "^1.0.0-rc.5",
     "jspdf": "^1.5.3",
     "massive": "^6.1.0",
